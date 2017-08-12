@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Collaborative Online Judge System</title>
+        <title>Merge Two Binary Trees</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Collaborative Online Judge System</a>
+                    <a class="navbar-brand visible-xs" href="#">Merge Two Binary Trees</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,12 +121,71 @@
     
 	
 
-	<h2>Collaborative Online Judge System</h2>
-	<h6>January 1, 0001</h6>
-     <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Angular2</kbd>  <kbd class="item-tag">Node.js</kbd>  <kbd class="item-tag">Express</kbd>  <kbd class="item-tag">Redia</kbd>  <kbd class="item-tag">MongoDB</kbd>  <kbd class="item-tag">Docker</kbd>  <kbd class="item-tag">RESTful API</kbd>  <kbd class="item-tag">Nginx</kbd>  <kbd class="item-tag">USC</kbd> 
+	<h2>Merge Two Binary Trees</h2>
+	<h6>August 12, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Recursion</kbd> 
 
     <br><br>
-    <div class="text-justify"></div>
+    <div class="text-justify">
+
+<h2 id="merge-two-binary-trees">Merge Two Binary Trees</h2>
+
+<h6 id="leetcode-617">LeetCode #617</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.</p>
+
+<p>You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.
+<br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>I will try to do it recursively. And the general case is just sum up the value of tree 1 and tree 2, then call recursive function again.</p>
+
+<pre><code>def recursiveFunction(tree1, tree2):
+	# Boundary condition
+	if tree1 or tree2 is None:
+		return tree2 or tree1
+
+	# General condition
+	TreeNode.val = tree1.val + tree2.val
+	TreeNode.left = recursiveFunction(tree1.left, tree2.left)
+	TreeNode.right = recursiveFunction(tree1.right, tree2.right)
+	return TreeNode
+</code></pre>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code># Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def mergeTrees(self, t1, t2):
+        &quot;&quot;&quot;
+        :type t1: TreeNode
+        :type t2: TreeNode
+        :rtype: TreeNode
+        &quot;&quot;&quot;
+        if t1 == None:
+            return t2
+        elif t2 == None:
+            return t1
+        #root = TreeNode(0)
+        t1.val = t1.val + t2.val
+        t1.left = self.mergeTrees(t1.left, t2.left)
+        t1.right = self.mergeTrees(t1.right, t2.right)
+        return t1
+</code></pre>
+</div>
 
     
     
@@ -136,25 +195,6 @@
         <h4 class="page-header">Related</h4>
 
          <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/merge-two-binary-trees/">
-    
-    Merge Two Binary Trees</a></h4>
-
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Recursion</kbd> 
-
-</div>
-  <div class="item">
 
 	
 
@@ -190,6 +230,25 @@
 
     <h5>August 7, 2017</h5>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Pointer</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/how-many-combination-results/">
+    
+    How Many Combination Results</a></h4>
+
+    <h5>August 7, 2017</h5>
+     <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Iteration</kbd>  <kbd class="item-tag">Recursion</kbd> 
 
 </div>
  
