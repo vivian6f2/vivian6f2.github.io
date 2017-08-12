@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Medium on Ting-Hsuan Lin</title>
-    <link>https://vivian6f2.github.io/tags/medium/</link>
-    <description>Recent content in Medium on Ting-Hsuan Lin</description>
+    <title>Queue on Ting-Hsuan Lin</title>
+    <link>https://vivian6f2.github.io/tags/queue/</link>
+    <description>Recent content in Queue on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://vivian6f2.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vivian6f2.github.io/tags/queue/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>3 Sum</title>
-      <link>https://vivian6f2.github.io/blog/3-sum/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://vivian6f2.github.io/blog/3-sum/</guid>
-      <description>3 Sum LeetCode #15 
-Description Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
-
-My Thoughts Create a helper function twoSum(nums, target), to find if there are any two elements A and B in nums, A + B = target.</description>
-    </item>
     
     <item>
       <title>Longest Substring Without Repeating Characters</title>

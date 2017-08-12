@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Blogs</title>
+        <title>Longest Substring Without Repeating Characters</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Blogs</a>
+                    <a class="navbar-brand visible-xs" href="#">Longest Substring Without Repeating Characters</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -118,9 +118,112 @@
 
 <main>
 
-    <h2>Blogs</h2>
+    
+	
 
-     <div class="item">
+	<h2>Longest Substring Without Repeating Characters</h2>
+	<h6>August 12, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Hash</kbd>  <kbd class="item-tag">Queue</kbd>  <kbd class="item-tag">JavaScript</kbd> 
+
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="longest-substring-without-repeating-characters">Longest Substring Without Repeating Characters</h2>
+
+<h6 id="leetcode-3">LeetCode #3</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given a string, find the length of the longest substring without repeating characters.</p>
+
+<p>Examples:</p>
+
+<p>Given &ldquo;abcabcbb&rdquo;, the answer is &ldquo;abc&rdquo;, which the length is 3.</p>
+
+<p>Given &ldquo;bbbbb&rdquo;, the answer is &ldquo;b&rdquo;, with the length of 1.</p>
+
+<p>Given &ldquo;pwwkew&rdquo;, the answer is &ldquo;wke&rdquo;, with the length of 3. Note that the answer must be a substring, &ldquo;pwke&rdquo; is a subsequence and not a substring.
+<br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>Use a hash table to check if that character is in the substring. And use a queue to save the substring.
+Run loop from index = 0 to string.length, and there are two cases:</p>
+
+<ul>
+<li>If character not in hash, push this character into queue and set hash[character] = true.</li>
+<li>If not, then pop the queue until character not in hash anymore, also set hash[queue.pop()] = false.</li>
+</ul>
+
+<pre><code>var myFunc = function(s){
+	var max_length = 0;
+	for(index = 0; index &lt; s.length; index++){
+		if(s[index] not in hash){
+			hash[s[index]] = true;
+			queue.push(s[index]);
+		}
+		else{
+			while((queue.length &gt; 0) &amp;&amp; (hash[s[index]] == true)){
+				var tmp = queue.pop();
+				hash[tmp] = false;
+			}
+			hash[s[index]] = true;
+			queue.push(s[index]);
+		}
+		update max_length;
+	}
+	return max_length;
+}
+</code></pre>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code>/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    var queue = [];
+    var hash = {};
+    var index = 0;
+    var maxLength = 0;
+    while(index &lt; s.length){
+        if(hash[s[index]] != true){
+            queue.push(s[index]);
+            hash[s[index]] = true;
+        }else{
+            while((queue.length &gt; 0) &amp;&amp; (hash[s[index]] == true)){
+                var tmp = queue.shift();
+                hash[tmp] = false;
+            }
+            if(hash[s[index]] != true){
+                hash[s[index]] = true;
+                queue.push(s[index]);
+            }
+        }
+        if(maxLength &lt; queue.length){
+            maxLength = queue.length;
+        }
+        index ++;
+    }
+    return maxLength;
+};
+
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
 
 	
 
@@ -131,12 +234,12 @@
     
     
 
-    <h4><a href="/blog/3-sum/">
+    <h4><a href="/blog/merge-two-binary-trees/">
     
-    3 Sum</a></h4>
+    Merge Two Binary Trees</a></h4>
 
     <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">JavaScript</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Recursion</kbd> 
 
 </div>
   <div class="item">
@@ -169,110 +272,17 @@
     
     
 
-    <h4><a href="/blog/longest-substring-without-repeating-characters/">
+    <h4><a href="/blog/3-sum/">
     
-    Longest Substring Without Repeating Characters</a></h4>
+    3 Sum</a></h4>
 
     <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Hash</kbd>  <kbd class="item-tag">Queue</kbd>  <kbd class="item-tag">JavaScript</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/merge-two-binary-trees/">
-    
-    Merge Two Binary Trees</a></h4>
-
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Recursion</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/about-this-website/">
-    
-    About This Website</a></h4>
-
-    <h5>August 11, 2017</h5>
-     <kbd class="item-tag">hugo</kbd>  <kbd class="item-tag">minimal</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/what-happens-when-typing-url-into-the-browser/">
-    
-    What Happens When Typing URL Into The Browser</a></h4>
-
-    <h5>August 9, 2017</h5>
-     <kbd class="item-tag">Interview</kbd>  <kbd class="item-tag">TCP/IP</kbd>  <kbd class="item-tag">HTTP</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/how-many-combination-results/">
-    
-    How Many Combination Results</a></h4>
-
-    <h5>August 7, 2017</h5>
-     <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Iteration</kbd>  <kbd class="item-tag">Recursion</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/trapping-rain-water/">
-    
-    Trapping Rain Water</a></h4>
-
-    <h5>August 7, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Pointer</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">JavaScript</kbd> 
 
 </div>
  
+
+    
 
 </main>
 

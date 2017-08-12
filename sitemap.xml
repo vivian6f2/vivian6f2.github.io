@@ -41,6 +41,11 @@
   </url>
   
   <url>
+    <loc>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</loc>
+    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vivian6f2.github.io/blog/merge-two-binary-trees/</loc>
     <lastmod>2017-08-12T00:00:00+00:00</lastmod>
   </url>
@@ -146,6 +151,12 @@
   </url>
   
   <url>
+    <loc>https://vivian6f2.github.io/tags/hash/</loc>
+    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vivian6f2.github.io/tags/http/</loc>
     <lastmod>2017-08-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -246,6 +257,12 @@
   
   <url>
     <loc>https://vivian6f2.github.io/tags/python/</loc>
+    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vivian6f2.github.io/tags/queue/</loc>
     <lastmod>2017-08-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

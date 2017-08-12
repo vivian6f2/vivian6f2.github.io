@@ -99,6 +99,20 @@ Because I have to convert array to a height balanced BST, I think that I have to
     </item>
     
     <item>
+      <title>Longest Substring Without Repeating Characters</title>
+      <link>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</guid>
+      <description>Longest Substring Without Repeating Characters LeetCode #3 
+Description Given a string, find the length of the longest substring without repeating characters.
+Examples:
+Given &amp;ldquo;abcabcbb&amp;rdquo;, the answer is &amp;ldquo;abc&amp;rdquo;, which the length is 3.
+Given &amp;ldquo;bbbbb&amp;rdquo;, the answer is &amp;ldquo;b&amp;rdquo;, with the length of 1.
+Given &amp;ldquo;pwwkew&amp;rdquo;, the answer is &amp;ldquo;wke&amp;rdquo;, with the length of 3. Note that the answer must be a substring, &amp;ldquo;pwke&amp;rdquo; is a subsequence and not a substring.</description>
+    </item>
+    
+    <item>
       <title>Merge Two Binary Trees</title>
       <link>https://vivian6f2.github.io/blog/merge-two-binary-trees/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
