@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leetcode on Ting-Hsuan Lin</title>
-    <link>https://vivian6f2.github.io/tags/leetcode/</link>
-    <description>Recent content in Leetcode on Ting-Hsuan Lin</description>
+    <title>Binary Tree on Ting-Hsuan Lin</title>
+    <link>https://vivian6f2.github.io/tags/binary-tree/</link>
+    <description>Recent content in Binary Tree on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://vivian6f2.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vivian6f2.github.io/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>3 Sum</title>
-      <link>https://vivian6f2.github.io/blog/3-sum/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://vivian6f2.github.io/blog/3-sum/</guid>
-      <description>3 Sum LeetCode #15 
-Description Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
-
-My Thoughts Create a helper function twoSum(nums, target), to find if there are any two elements A and B in nums, A + B = target.</description>
-    </item>
     
     <item>
       <title>Convert Sorted Array to Binary Search Tree</title>
@@ -44,18 +32,6 @@ Because I have to convert array to a height balanced BST, I think that I have to
       <description>Merge Two Binary Trees LeetCode #617 
 Description Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.
 You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node.</description>
-    </item>
-    
-    <item>
-      <title>Trapping Rain Water</title>
-      <link>https://vivian6f2.github.io/blog/trapping-rain-water/</link>
-      <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://vivian6f2.github.io/blog/trapping-rain-water/</guid>
-      <description>Trapping Rain Water LeetCode #42 
-Description Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
-For example,  Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
-My Thoughts I would like to do this problem with two pointers, one points to left wall and another to right wall. If I can find out left and right wall for every part that can trap water, then I can easily compute total water I can get.</description>
     </item>
     
   </channel>

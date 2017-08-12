@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bst on Ting-Hsuan Lin</title>
+    <link>https://vivian6f2.github.io/tags/bst/</link>
+    <description>Recent content in Bst on Ting-Hsuan Lin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vivian6f2.github.io/tags/bst/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Convert Sorted Array to Binary Search Tree</title>
+      <link>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</guid>
+      <description>Convert Sorted Array to Binary Search Tree LeetCode #108 
+Description Given an array where elements are sorted in ascending order, convert it to a height balanced BST. 
+My Thoughts I like to do tree problem recursively if I can. And for this problem, I know I can do it recursively by dividing a big problem into two small problems until I can solve the question.
+Because I have to convert array to a height balanced BST, I think that I have to divide the array in the middle everytime.</description>
+    </item>
+    
+  </channel>
+</rss>

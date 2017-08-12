@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Mysql</title>
+        <title>3 Sum</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Mysql</a>
+                    <a class="navbar-brand visible-xs" href="#">3 Sum</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -118,29 +118,138 @@
 
 <main>
 
-    <h2>Mysql</h2>
+    
+	
 
-     <div class="item">
+	<h2>3 Sum</h2>
+	<h6>August 12, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">JavaScript</kbd> 
+
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="3-sum">3 Sum</h2>
+
+<h6 id="leetcode-15">LeetCode #15</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
+
+<p><br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>Create a helper function twoSum(nums, target), to find if there are any two elements A and B in nums, A + B = target. Return all possible [A,B] pairs.</p>
+
+<p>And in main function threeSum(nums), I just have to run a loop from index = 0 to nums.length. Call twoSum with target = -nums[index] first and push all possible three sum into answer array.</p>
+
+<pre><code>var threeSum = function(nums){
+	for (var index = 0; index &lt; nums.length; index ++){
+		list = twoSum(nums without nums[index], -nums[index]);
+		Add all list + nums[index] into ans;
+	}
+	return ans;
+}
+
+var twoSum = function(nums, target){
+	Find all possible A, B pairs and add into list;
+	return list;
+}
+</code></pre>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code>/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function(nums) {
+    var index = 0;
+    var ans = [];
+    var check = {};
+    nums.sort(function(a,b){
+        return (a-b);
+    });
+    //console.log(nums);
+    while(index &lt; (nums.length)){
+        if(nums[index] != nums[index-1]){
+            var tmpNums = nums.slice(0);
+            tmpNums.splice(index, 1);
+            list = twoSum(tmpNums, -nums[index]);
+            for(var i = 0; i &lt; list.length; i++){
+                list[i].push(nums[index]);
+                list[i].sort(function(a,b){
+                    return (a-b);
+                });
+                if(check[list[i]] != true){
+                    ans.push(list[i]);
+                }
+                check[list[i]] = true;
+            }
+        }
+        index++;
+    }
+    return ans;
+};
+
+var twoSum = function(nums, target){
+    var list = [];
+    var check = {};
+    // nums.sort();
+    // console.log(nums+&quot; origin&quot;);
+    var left = 0;
+    var right = nums.length-1;
+    while(left &lt; right){
+        if((nums[left] + nums[right]) == target){
+            if(check[[nums[left], nums[right]]] != true){
+                list.push([nums[left], nums[right]]);
+            }
+            check[[nums[left], nums[right]]] = true;
+            left++;
+            right--;
+        }
+        else if(nums[left] + nums[right] &lt; target){
+            left++;
+        }
+        else{
+            right--;
+        }
+    }
+    return list;
+};
+
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
 
 	
 
 	
-    
-     
-    
-    
 
     
 
     
-      
+    
 
-    <h4><a href="/project/side-scrolling-racing-game/">
-     <i class="fa fa-github"></i>&nbsp;  <i class="fa fa-user"></i>&nbsp; 
-    2D Web Side-Scrolling Racing Game</a></h4>
+    <h4><a href="/blog/merge-two-binary-trees/">
+    
+    Merge Two Binary Trees</a></h4>
 
-    <h5>Designed and developed a game-like GUI with HTML and CSS.<br> Implemented in-game map/stage editor which supports users to customize and develop their own game scenarios with JavaScript and stored the map/stage object data to MySQL database.<br> Developed ranking score, leaderboard interface and character controller with JavaScript.</h5>
-     <kbd class="item-tag">UI/UX</kbd>  <kbd class="item-tag">PHP</kbd>  <kbd class="item-tag">MySQL</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Game</kbd>  <kbd class="item-tag">NCTU</kbd> 
+    <h5>August 12, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Recursion</kbd> 
 
 </div>
   <div class="item">
@@ -148,22 +257,18 @@
 	
 
 	
-    
-     
-    
-    
 
     
 
     
-      
+    
 
-    <h4><a href="/project/face-recognition-roll-call-system/">
-     <i class="fa fa-github"></i>&nbsp;  <i class="fa fa-users"></i>&nbsp; 
-    Face Recognition Roll Call System</a></h4>
+    <h4><a href="/blog/convert-sorted-array-to-binary-search-tree/">
+    
+    Convert Sorted Array to Binary Search Tree</a></h4>
 
-    <h5>Used Apache server on Linux for the system connecting between Arduino and smartphone/tablet.<br> Managed students’ information and images with PHP/SQL database for face recognition.<br> Extracted JSON from face recognition API and updated roll call record on teachers’ smartphone/tablet with PHP.<br> Built real-time Q&amp;A system for the class with JavaScript and PHP.</h5>
-     <kbd class="item-tag">PHP</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">MySQL</kbd>  <kbd class="item-tag">NCTU</kbd> 
+    <h5>August 12, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">BST</kbd>  <kbd class="item-tag">Recursion</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
 
 </div>
   <div class="item">
@@ -171,25 +276,23 @@
 	
 
 	
-    
-     
-    
-    
 
     
 
     
-      
+    
 
-    <h4><a href="https://github.com/vivian6f2/Online-Learning-System/">
-     <i class="fa fa-github"></i>&nbsp;  <i class="fa fa-users"></i>&nbsp; 
-    Online Learning System</a></h4>
+    <h4><a href="/blog/trapping-rain-water/">
+    
+    Trapping Rain Water</a></h4>
 
-    <h5>Designed and developed a user-friendly interface for children at age around 8~14 with HTML and CSS.<br> Built up a course management system based on PHP/SQL database which can provide users to access and edit their course list.<br> Employed HTML5 Canvas and JavaScript to record and retrieve the processes of students’ answers.</h5>
-     <kbd class="item-tag">UI/UX</kbd>  <kbd class="item-tag">PHP</kbd>  <kbd class="item-tag">MySQL</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">NCTU</kbd> 
+    <h5>August 7, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Pointer</kbd> 
 
 </div>
  
+
+    
 
 </main>
 

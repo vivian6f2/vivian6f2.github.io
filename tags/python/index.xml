@@ -6,7 +6,7 @@
     <description>Recent content in Python on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,29 @@
       
       <guid>https://vivian6f2.github.io/ec2-34-223-214-115.us-west-2.compute.amazonaws.com3000</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Convert Sorted Array to Binary Search Tree</title>
+      <link>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</guid>
+      <description>Convert Sorted Array to Binary Search Tree LeetCode #108 
+Description Given an array where elements are sorted in ascending order, convert it to a height balanced BST. 
+My Thoughts I like to do tree problem recursively if I can. And for this problem, I know I can do it recursively by dividing a big problem into two small problems until I can solve the question.
+Because I have to convert array to a height balanced BST, I think that I have to divide the array in the middle everytime.</description>
+    </item>
+    
+    <item>
+      <title>Merge Two Binary Trees</title>
+      <link>https://vivian6f2.github.io/blog/merge-two-binary-trees/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/merge-two-binary-trees/</guid>
+      <description>Merge Two Binary Trees LeetCode #617 
+Description Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.
+You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node.</description>
     </item>
     
     <item>
