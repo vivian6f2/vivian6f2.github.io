@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Reverse Nodes in k-Group</title>
+        <title>Container With Most Water</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Reverse Nodes in k-Group</a>
+                    <a class="navbar-brand visible-xs" href="#">Container With Most Water</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,106 +121,67 @@
     
 	
 
-	<h2>Reverse Nodes in k-Group</h2>
+	<h2>Container With Most Water</h2>
     <h6>August 12, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="reverse-nodes-in-k-group">Reverse Nodes in k-Group</h2>
+<h2 id="container-with-most-water">Container With Most Water</h2>
 
-<h6 id="leetcode-25">LeetCode #25</h6>
+<h6 id="leetcode-11">LeetCode #11</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.</p>
+<p>Given n non-negative integers a1, a2, &hellip;, an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p>
 
-<p>k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.</p>
+<p>Note: You may not slant the container and n is at least 2.</p>
 
-<p>You may not alter the values in the nodes, only nodes itself may be changed.</p>
-
-<p>Only constant memory is allowed.</p>
-
-<p>For example,</p>
-
-<p>Given this linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5</p>
-
-<p>For k = 2, you should return: 2-&gt;1-&gt;4-&gt;3-&gt;5</p>
-
-<p>For k = 3, you should return: 3-&gt;2-&gt;1-&gt;4-&gt;5
-<br/></p>
+<p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>Because I have to reverse part of the linked list from ith to (i+k)th, I think I need a helper function reverse(preTail, nextHead). PreTail is the tail of previous part of the linked list and nextHead means the beginning of the next part of linked list. And this helper function will reverse this part of linked list (from preTail.next to nextHead), and return the tail of reversed linked list.</p>
+<p>It is easy to do with two pointers, left and right. Calculate the rectangle between left and right first and update max area, and then try to move left or right pointer:</p>
 
-<p>The reason why I need previous tail and next head is that I have to linked all reversed linked list together.</p>
-
-<p>For example, if I get a linked list a-&gt;b-&gt;c-&gt;d-&gt;e and k = 2:</p>
-
-<p>Take second run for example, then the current linked list would look like b-&gt;a-&gt;c-&gt;d-&gt;e. So preTail = a, nextHead = e, and preTail.next = c. After I reversed c-&gt;d to d-&gt;c, I have to link this part to the whole linked list. So preTail.next should be d and c.next should be nextHead. Then return c as next preTail.</p>
-
-<pre><code>def reverse(preTail, nextHead):
-	partialHead = preTail.next
-	reverse from partialHead to nextHead
-	preTail.next = newPartialHead
-	newPartialTail.next = nextHead
-	return newPartialTail
+<pre><code>* If left height is less than right height, move left pointer until left height &gt;= right height.
+* Vice versa
 </code></pre>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
-<pre><code># Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+<pre><code>class Solution(object):
+    def maxArea(self, height):
+        &quot;&quot;&quot;
+        :type height: List[int]
+        :rtype: int
+        &quot;&quot;&quot;
+        max_area = 0
+        lh = height[0]
+        rh = height[len(height)-1]
+        i=0
+        j=len(height)-1
 
-class Solution(object):
-    def reverseKGroup(self, head, k):
-        &quot;&quot;&quot;
-        :type head: ListNode
-        :type k: int
-        :rtype: ListNode
-        &quot;&quot;&quot;
-        if((head == None) or (k &lt;= 1)):
-            return head
-        dummy = ListNode(0)
-        dummy.next = head
-        preTail = dummy
-        
-        count = 0
-        while(head != None):
-            count += 1
-            if(count == k):
-                preTail = self.reverse(preTail, head.next)
-                head = preTail.next
-                count = 0
+        while i&lt;j:
+            tmp = min(lh,rh)*(j-i)
+            max_area = max(tmp,max_area)
+            if lh&lt;rh:
+                while i&lt;j and height[i]&lt;=lh:
+                    i=i+1
+                if i&lt;j:
+                    lh=height[i]
             else:
-                head = head.next
-        return dummy.next
-        
-        
-        return dummy.next
-    def reverse(self, preTail, nextHead):
-        head = preTail.next
-        tail = preTail.next
-        previous = None
-        current = head
-        while(current != nextHead):
-            nextNode = current.next
-            current.next = previous
-            previous = current
-            current = nextNode
-        head = previous
-        preTail.next = head
-        tail.next = nextHead
-        return tail
+                while i&lt;j and height[j]&lt;=rh:
+                    #print(&quot;in&quot;)
+                    j=j-1
+                if i&lt;j:
+                    rh=height[j]
+
+        return max_area
 </code></pre>
 </div>
 

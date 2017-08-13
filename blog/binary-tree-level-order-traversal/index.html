@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Reverse Nodes in k-Group</title>
+        <title>Binary Tree Level Order Traversal</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Reverse Nodes in k-Group</a>
+                    <a class="navbar-brand visible-xs" href="#">Binary Tree Level Order Traversal</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,106 +121,81 @@
     
 	
 
-	<h2>Reverse Nodes in k-Group</h2>
+	<h2>Binary Tree Level Order Traversal</h2>
     <h6>August 12, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">BFS</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="reverse-nodes-in-k-group">Reverse Nodes in k-Group</h2>
+<h2 id="binary-tree-level-order-traversal">Binary Tree Level Order Traversal</h2>
 
-<h6 id="leetcode-25">LeetCode #25</h6>
+<h6 id="leetcode-102">LeetCode #102</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.</p>
+<p>Given a binary tree, return the level order traversal of its nodes&rsquo; values. (ie, from left to right, level by level).</p>
 
-<p>k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.</p>
+<p>For example:</p>
 
-<p>You may not alter the values in the nodes, only nodes itself may be changed.</p>
+<p>Given binary tree [3,9,20,null,null,15,7],</p>
 
-<p>Only constant memory is allowed.</p>
+<p>return its level order traversal as:</p>
 
-<p>For example,</p>
+<pre><code>[
+  [3],
+  [9,20],
+  [15,7]
+]
+</code></pre>
 
-<p>Given this linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5</p>
-
-<p>For k = 2, you should return: 2-&gt;1-&gt;4-&gt;3-&gt;5</p>
-
-<p>For k = 3, you should return: 3-&gt;2-&gt;1-&gt;4-&gt;5
-<br/></p>
+<p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>Because I have to reverse part of the linked list from ith to (i+k)th, I think I need a helper function reverse(preTail, nextHead). PreTail is the tail of previous part of the linked list and nextHead means the beginning of the next part of linked list. And this helper function will reverse this part of linked list (from preTail.next to nextHead), and return the tail of reversed linked list.</p>
+<p>I will try to do this recursively. And I would create a 2-D array with the first dimension for level and second dimension for value.</p>
 
-<p>The reason why I need previous tail and next head is that I have to linked all reversed linked list together.</p>
+<p>In the recursive function, just do following things:</p>
 
-<p>For example, if I get a linked list a-&gt;b-&gt;c-&gt;d-&gt;e and k = 2:</p>
-
-<p>Take second run for example, then the current linked list would look like b-&gt;a-&gt;c-&gt;d-&gt;e. So preTail = a, nextHead = e, and preTail.next = c. After I reversed c-&gt;d to d-&gt;c, I have to link this part to the whole linked list. So preTail.next should be d and c.next should be nextHead. Then return c as next preTail.</p>
-
-<pre><code>def reverse(preTail, nextHead):
-	partialHead = preTail.next
-	reverse from partialHead to nextHead
-	preTail.next = newPartialHead
-	newPartialTail.next = nextHead
-	return newPartialTail
-</code></pre>
+<ul>
+<li>If root is None, do nothing.</li>
+<li>If the number of first dimension of result equals to level, it means that it is the first node in that level. Just append new level to the result with the value.</li>
+<li>Else, it means that there are already some same level nodes in the results, so append that value to the correct level.</li>
+<li>After that, call recursive function twice with left tree and right tree, and level = level + 1.</li>
+</ul>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
-<pre><code># Definition for singly-linked list.
-# class ListNode(object):
+<pre><code># Definition for a binary tree node.
+# class TreeNode(object):
 #     def __init__(self, x):
 #         self.val = x
-#         self.next = None
+#         self.left = None
+#         self.right = None
 
 class Solution(object):
-    def reverseKGroup(self, head, k):
+    def levelOrder(self, root):
         &quot;&quot;&quot;
-        :type head: ListNode
-        :type k: int
-        :rtype: ListNode
+        :type root: TreeNode
+        :rtype: List[List[int]]
         &quot;&quot;&quot;
-        if((head == None) or (k &lt;= 1)):
-            return head
-        dummy = ListNode(0)
-        dummy.next = head
-        preTail = dummy
+        level = 0
+        self.result = []
+        self.putLevelOrder(root, 0)
+        return self.result
         
-        count = 0
-        while(head != None):
-            count += 1
-            if(count == k):
-                preTail = self.reverse(preTail, head.next)
-                head = preTail.next
-                count = 0
+    def putLevelOrder(self, root, level):
+        if root!=None:
+            if len(self.result)==level:
+                self.result.append([root.val])
             else:
-                head = head.next
-        return dummy.next
-        
-        
-        return dummy.next
-    def reverse(self, preTail, nextHead):
-        head = preTail.next
-        tail = preTail.next
-        previous = None
-        current = head
-        while(current != nextHead):
-            nextNode = current.next
-            current.next = previous
-            previous = current
-            current = nextNode
-        head = previous
-        preTail.next = head
-        tail.next = nextHead
-        return tail
+                self.result[level].append(root.val)
+            self.putLevelOrder(root.left, level+1)
+            self.putLevelOrder(root.right, level+1)
 </code></pre>
 </div>
 

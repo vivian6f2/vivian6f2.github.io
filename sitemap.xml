@@ -31,7 +31,32 @@
   </url>
   
   <url>
+    <loc>https://vivian6f2.github.io/blog/binary-tree-inorder-traversal/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vivian6f2.github.io/blog/binary-tree-postorder-traversal/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vivian6f2.github.io/blog/binary-tree-preorder-traversal/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vivian6f2.github.io/blog/4-sum/</loc>
+    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vivian6f2.github.io/blog/binary-tree-level-order-traversal/</loc>
+    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vivian6f2.github.io/blog/container-with-most-water/</loc>
     <lastmod>2017-08-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -127,14 +152,20 @@
   </url>
   
   <url>
+    <loc>https://vivian6f2.github.io/tags/bfs/</loc>
+    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vivian6f2.github.io/tags/binary-tree/</loc>
-    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://vivian6f2.github.io/blog/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -182,7 +213,7 @@
   
   <url>
     <loc>https://vivian6f2.github.io/tags/hard/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -235,7 +266,7 @@
   
   <url>
     <loc>https://vivian6f2.github.io/tags/leetcode/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -247,7 +278,7 @@
   
   <url>
     <loc>https://vivian6f2.github.io/tags/medium/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -305,7 +336,7 @@
   
   <url>
     <loc>https://vivian6f2.github.io/tags/python/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -348,7 +379,7 @@
   
   <url>
     <loc>https://vivian6f2.github.io/tags/stack/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -382,7 +413,7 @@
   
   <url>
     <loc>https://vivian6f2.github.io/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

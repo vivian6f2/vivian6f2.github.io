@@ -24,6 +24,17 @@ For example, given array S = [1, 0, -1, 0, -2, 2], and target = 0.</description>
     </item>
     
     <item>
+      <title>Container With Most Water</title>
+      <link>https://vivian6f2.github.io/blog/container-with-most-water/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/container-with-most-water/</guid>
+      <description>Container With Most Water LeetCode #11 
+Description Given n non-negative integers a1, a2, &amp;hellip;, an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+Note: You may not slant the container and n is at least 2.</description>
+    </item>
+    
+    <item>
       <title>Largest Rectangle in Histogram</title>
       <link>https://vivian6f2.github.io/blog/largest-rectangle-in-histogram/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>

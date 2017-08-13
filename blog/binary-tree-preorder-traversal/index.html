@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Reverse Nodes in k-Group</title>
+        <title>Binary Tree Preorder Traversal</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Reverse Nodes in k-Group</a>
+                    <a class="navbar-brand visible-xs" href="#">Binary Tree Preorder Traversal</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,106 +121,98 @@
     
 	
 
-	<h2>Reverse Nodes in k-Group</h2>
-    <h6>August 12, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd> 
+	<h2>Binary Tree Preorder Traversal</h2>
+    <h6>August 13, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="reverse-nodes-in-k-group">Reverse Nodes in k-Group</h2>
+<h2 id="binary-tree-preorder-traversal">Binary Tree Preorder Traversal</h2>
 
-<h6 id="leetcode-25">LeetCode #25</h6>
+<h6 id="leetcode-144">LeetCode #144</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.</p>
+<p>Given a binary tree, return the preorder traversal of its nodes&rsquo; values.</p>
 
-<p>k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.</p>
+<p>For example:</p>
 
-<p>You may not alter the values in the nodes, only nodes itself may be changed.</p>
+<p>Given binary tree {1,#,2,3},</p>
 
-<p>Only constant memory is allowed.</p>
+<p>return [1,2,3].</p>
 
-<p>For example,</p>
+<p><strong>Note:</strong> Recursive solution is trivial, could you do it iteratively?</p>
 
-<p>Given this linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5</p>
-
-<p>For k = 2, you should return: 2-&gt;1-&gt;4-&gt;3-&gt;5</p>
-
-<p>For k = 3, you should return: 3-&gt;2-&gt;1-&gt;4-&gt;5
-<br/></p>
+<p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>Because I have to reverse part of the linked list from ith to (i+k)th, I think I need a helper function reverse(preTail, nextHead). PreTail is the tail of previous part of the linked list and nextHead means the beginning of the next part of linked list. And this helper function will reverse this part of linked list (from preTail.next to nextHead), and return the tail of reversed linked list.</p>
+<p>This is a similar question to <a href="/blog/binary-tree-inorder-traversal/">Binary Tree Inorder Traversal</a> and <a href="/blog/binary-tree-postorder-traversal/">Binary Tree Postorder Traversal</a>.</p>
 
-<p>The reason why I need previous tail and next head is that I have to linked all reversed linked list together.</p>
+<p>It is always easy to do tree problem recursively. If I want to do it iteratively, then I need a stack to save all tree nodes that I will need later.</p>
 
-<p>For example, if I get a linked list a-&gt;b-&gt;c-&gt;d-&gt;e and k = 2:</p>
+<p>Preorder = current node, left child, right child.</p>
 
-<p>Take second run for example, then the current linked list would look like b-&gt;a-&gt;c-&gt;d-&gt;e. So preTail = a, nextHead = e, and preTail.next = c. After I reversed c-&gt;d to d-&gt;c, I have to link this part to the whole linked list. So preTail.next should be d and c.next should be nextHead. Then return c as next preTail.</p>
+<p>For this question, preorder also means DFS, so I just have to go all the way down through left child of every tree nodes. And then pop the stack from the bottom of the tree and go right one time and go left again all the way down.</p>
 
-<pre><code>def reverse(preTail, nextHead):
-	partialHead = preTail.next
-	reverse from partialHead to nextHead
-	preTail.next = newPartialHead
-	newPartialTail.next = nextHead
-	return newPartialTail
+<pre><code>def preorderTraversal(node):
+	stack = []
+	# Go all the way down to the left most 
+	# child and push every passing nodes into stack.
+	while node:
+		stack.push(node)
+		node = node.left
+
+	# Start from the left most child, retrieve each node 
+	# from stack and go to it's right child one time.
+	while stack:
+		node = stack.pop()
+		right = node.right
+
+		# And then go all the way down to the left most child 
+		# of that right child, and also push nodes into stack.
+		while right:
+			stack.push(right)
+			right = right.left
 </code></pre>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
-<pre><code># Definition for singly-linked list.
-# class ListNode(object):
+<pre><code># Definition for a binary tree node.
+# class TreeNode(object):
 #     def __init__(self, x):
 #         self.val = x
-#         self.next = None
+#         self.left = None
+#         self.right = None
 
 class Solution(object):
-    def reverseKGroup(self, head, k):
+    def preorderTraversal(self, root):
         &quot;&quot;&quot;
-        :type head: ListNode
-        :type k: int
-        :rtype: ListNode
+        :type root: TreeNode
+        :rtype: List[int]
         &quot;&quot;&quot;
-        if((head == None) or (k &lt;= 1)):
-            return head
-        dummy = ListNode(0)
-        dummy.next = head
-        preTail = dummy
-        
-        count = 0
-        while(head != None):
-            count += 1
-            if(count == k):
-                preTail = self.reverse(preTail, head.next)
-                head = preTail.next
-                count = 0
-            else:
-                head = head.next
-        return dummy.next
-        
-        
-        return dummy.next
-    def reverse(self, preTail, nextHead):
-        head = preTail.next
-        tail = preTail.next
-        previous = None
-        current = head
-        while(current != nextHead):
-            nextNode = current.next
-            current.next = previous
-            previous = current
-            current = nextNode
-        head = previous
-        preTail.next = head
-        tail.next = nextHead
-        return tail
+        ans = []
+        stack = []
+        node = root
+        while node:
+            ans.append(node.val)
+            stack.append(node)
+            node = node.left
+            
+        while stack:
+            node = stack.pop()
+            right = node.right
+            while right:
+                ans.append(right.val)
+                stack.append(right)
+                right = right.left
+                
+        return ans
 </code></pre>
 </div>
 
@@ -232,25 +224,6 @@ class Solution(object):
         <h4 class="page-header">Related</h4>
 
          <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/binary-tree-preorder-traversal/">
-    
-    Binary Tree Preorder Traversal</a></h4>
-
-    <h5>August 13, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
-
-</div>
-  <div class="item">
 
 	
 
@@ -286,6 +259,25 @@ class Solution(object):
 
     <h5>August 13, 2017</h5>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Stack</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/simplify-path/">
+    
+    Simplify Path</a></h4>
+
+    <h5>August 12, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">String</kbd> 
 
 </div>
  
