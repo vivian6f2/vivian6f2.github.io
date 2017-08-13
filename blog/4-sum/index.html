@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Simplify Path</title>
+        <title>4 Sum</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Simplify Path</a>
+                    <a class="navbar-brand visible-xs" href="#">4 Sum</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,40 +121,54 @@
     
 	
 
-	<h2>Simplify Path</h2>
+	<h2>4 Sum</h2>
     <h6>August 12, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">String</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Recursion</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="simplify-path">Simplify Path</h2>
+<h2 id="4-sum">4 Sum</h2>
 
-<h6 id="leetcode-71">LeetCode #71</h6>
+<h6 id="leetcode-18">LeetCode #18</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given an absolute path for a file (Unix-style), simplify it.</p>
+<p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
 
-<p>For example,</p>
+<p><strong>Note:</strong> The solution set must not contain duplicate quadruplets.</p>
 
-<p>path = &ldquo;/home/&rdquo;, =&gt; &ldquo;/home&rdquo;</p>
+<pre><code>For example, given array S = [1, 0, -1, 0, -2, 2], and target = 0.
 
-<p>path = &ldquo;/a/./b/../../c/&rdquo;, =&gt; &ldquo;/c&rdquo;</p>
+A solution set is:
+[
+  [-1,  0, 0, 1],
+  [-2, -1, 1, 2],
+  [-2,  0, 0, 2]
+]
+</code></pre>
 
 <p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>I will use stack to solve this problem. And there are some conditions that I will push or pop the stack:</p>
+<p>It is similar to <a href="/blog/3-sum/">3 Sum</a> problem. I think I will also make a helper function twoSum and use two for loops to calculate two numbers first. Then call twoSum with rest of numbers and target = target - sum of two numbers.</p>
+
+<p>However, it works but it runs too slow.</p>
+
+<p>So, I think I have to take advantage on sorted array. And also change my solution into a recursive function which can handle N Sum problem, and it considers about following condition:</p>
 
 <ul>
-<li>If I get nothing after &ldquo;/&rdquo;, do nothing.</li>
-<li>If I get &ldquo;pathname/&rdquo;, push &ldquo;pathname/&rdquo; into stack.</li>
-<li>If I get &ldquo;./&rdquo;, do nothing.</li>
-<li>If I get &ldquo;../&rdquo;, pop stack one time.</li>
+<li>If number of nums is less than N or N &lt; 2, it means that the remaining nums cannot come up with a result, so just return.</li>
+<li>If N == 2, then do two sum as usual with two pointers.</li>
+<li>Else, run for loop for all remaining nums:
+
+<ol>
+<li>To speed up, I have to take advantage of sorted array. If target &lt; nums[i] * N or target &gt; nums[-1] * N, it is impossible to get N numbers which sum equals to target, so I can break the loop.</li>
+<li>Take advantage of sorted array again, I can just process index where nums[index-1] != nums[index], cause I don&rsquo;t have to compute the same answer. And in this condition, I can call recursive function with nums = nums[i+1:], target = target - nums[i], and N = N-1</li>
+</ol></li>
 </ul>
 
 <p><br/></p>
@@ -162,29 +176,48 @@
 <h4 id="solution">Solution</h4>
 
 <pre><code>class Solution(object):
-    def simplifyPath(self, path):
+    def fourSum(self, nums, target):
         &quot;&quot;&quot;
-        :type path: str
-        :rtype: str
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[List[int]]
         &quot;&quot;&quot;
-        path_list = path.split('/')
-
-        stack = []
-        for value in path_list:
-            if value == '' or value=='.':
-                continue
-            elif value== '..':
-                if len(stack)&gt;0:
-                    stack.pop()
+        results = []
+        
+        def findNSum(nums, target, N, result):
+            if len(nums) &lt; N or N &lt; 2:
+                return
+            
+            # two Sum
+            if N == 2:
+                left = 0
+                right = len(nums)-1
+                while left &lt; right:
+                    if nums[left] + nums[right] == target:
+                        results.append(result + [nums[left], nums[right]])
+                        left += 1
+                        right -= 1
+                        while left &lt; right and nums[left] == nums[left-1]:
+                            left += 1
+                        while left &lt; right and nums[right] == nums[right+1]:
+                            right -= 1
+                    elif nums[left] + nums[right] &lt; target:
+                        left += 1
+                    else:
+                        right -= 1
             else:
-                stack.append(value)
-                
-        if len(stack)==0: return &quot;/&quot;
-        else:
-            str = ''
-            for value in stack:
-                str = str + &quot;/&quot; + value
-            return str
+                for i in range(0, len(nums)-N+1):
+                    if target &lt; nums[i]*N or target &gt; nums[-1]*N:
+                        break
+                    if i == 0 or i &gt; 0 and nums[i-1] != nums[i]:
+                        findNSum(nums[i+1:], target-nums[i], N-1, result+[nums[i]])
+            return
+        
+        nums.sort()
+        findNSum(nums, target, 4, [])
+                    
+        
+        return results
 </code></pre>
 </div>
 
@@ -196,6 +229,25 @@
         <h4 class="page-header">Related</h4>
 
          <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/simplify-path/">
+    
+    Simplify Path</a></h4>
+
+    <h5>August 12, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">String</kbd> 
+
+</div>
+  <div class="item">
 
 	
 
@@ -231,25 +283,6 @@
 
     <h5>August 12, 2017</h5>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Queue</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/largest-rectangle-in-histogram/">
-    
-    Largest Rectangle in Histogram</a></h4>
-
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Python</kbd> 
 
 </div>
  

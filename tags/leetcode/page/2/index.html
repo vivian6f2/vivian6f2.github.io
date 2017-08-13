@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Simplify Path</title>
+        <title>Leetcode</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Simplify Path</a>
+                    <a class="navbar-brand visible-xs" href="#">Leetcode</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -118,84 +118,9 @@
 
 <main>
 
-    
-	
+    <h2>Leetcode</h2>
 
-	<h2>Simplify Path</h2>
-    <h6>August 12, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">String</kbd> 
-
-    <br><br>
-    <div class="text-justify">
-
-<h2 id="simplify-path">Simplify Path</h2>
-
-<h6 id="leetcode-71">LeetCode #71</h6>
-
-<p><br/></p>
-
-<h4 id="description">Description</h4>
-
-<p>Given an absolute path for a file (Unix-style), simplify it.</p>
-
-<p>For example,</p>
-
-<p>path = &ldquo;/home/&rdquo;, =&gt; &ldquo;/home&rdquo;</p>
-
-<p>path = &ldquo;/a/./b/../../c/&rdquo;, =&gt; &ldquo;/c&rdquo;</p>
-
-<p><br/></p>
-
-<h4 id="my-thoughts">My Thoughts</h4>
-
-<p>I will use stack to solve this problem. And there are some conditions that I will push or pop the stack:</p>
-
-<ul>
-<li>If I get nothing after &ldquo;/&rdquo;, do nothing.</li>
-<li>If I get &ldquo;pathname/&rdquo;, push &ldquo;pathname/&rdquo; into stack.</li>
-<li>If I get &ldquo;./&rdquo;, do nothing.</li>
-<li>If I get &ldquo;../&rdquo;, pop stack one time.</li>
-</ul>
-
-<p><br/></p>
-
-<h4 id="solution">Solution</h4>
-
-<pre><code>class Solution(object):
-    def simplifyPath(self, path):
-        &quot;&quot;&quot;
-        :type path: str
-        :rtype: str
-        &quot;&quot;&quot;
-        path_list = path.split('/')
-
-        stack = []
-        for value in path_list:
-            if value == '' or value=='.':
-                continue
-            elif value== '..':
-                if len(stack)&gt;0:
-                    stack.pop()
-            else:
-                stack.append(value)
-                
-        if len(stack)==0: return &quot;/&quot;
-        else:
-            str = ''
-            for value in stack:
-                str = str + &quot;/&quot; + value
-            return str
-</code></pre>
-</div>
-
-    
-    
-
-    
-
-        <h4 class="page-header">Related</h4>
-
-         <div class="item">
+     <div class="item">
 
 	
 
@@ -206,57 +131,31 @@
     
     
 
-    <h4><a href="/blog/reverse-nodes-in-k-group/">
+    <h4><a href="/blog/trapping-rain-water/">
     
-    Reverse Nodes in k-Group</a></h4>
+    Trapping Rain Water</a></h4>
 
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/moving-average-from-data-stream/">
-    
-    Moving Average from Data Stream</a></h4>
-
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Queue</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/largest-rectangle-in-histogram/">
-    
-    Largest Rectangle in Histogram</a></h4>
-
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Python</kbd> 
+    <h5>August 7, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Pointer</kbd> 
 
 </div>
  
 
-    
-
 </main>
+
+
+
+    <div class="pages">
+
+        
+            <a class="icon pages-icon" href="/tags/leetcode/" rel="prev">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        
+
+        
+
+    </div>
 
 
 
