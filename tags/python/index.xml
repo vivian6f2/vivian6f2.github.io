@@ -30,9 +30,34 @@
     </item>
     
     <item>
+      <title>Moving Average from Data Stream</title>
+      <link>https://vivian6f2.github.io/blog/moving-average-from-data-stream/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/moving-average-from-data-stream/</guid>
+      <description>Moving Average from Data Stream LeetCode #346 
+Description Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+For example,
+MovingAverage m = new MovingAverage(3); m.next(1) = 1 m.next(10) = (1 + 10) / 2 m.next(3) = (1 + 10 + 3) / 3 m.next(5) = (10 + 3 + 5) / 3  
+My Thoughts For this question, because it is a data stream problem, I would like to do it with queue to make it first-in-first-out.</description>
+    </item>
+    
+    <item>
+      <title>Reverse Nodes in k-Group</title>
+      <link>https://vivian6f2.github.io/blog/reverse-nodes-in-k-group/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/reverse-nodes-in-k-group/</guid>
+      <description>Reverse Nodes in k-Group LeetCode #25 
+Description Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
+k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
+You may not alter the values in the nodes, only nodes itself may be changed.</description>
+    </item>
+    
+    <item>
       <title>Convert Sorted Array to Binary Search Tree</title>
       <link>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</guid>
       <description>Convert Sorted Array to Binary Search Tree LeetCode #108 
@@ -44,7 +69,7 @@ Because I have to convert array to a height balanced BST, I think that I have to
     <item>
       <title>Merge Two Binary Trees</title>
       <link>https://vivian6f2.github.io/blog/merge-two-binary-trees/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/blog/merge-two-binary-trees/</guid>
       <description>Merge Two Binary Trees LeetCode #617 

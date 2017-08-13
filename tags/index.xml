@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -41,7 +41,7 @@
     <item>
       <title>Binary Tree</title>
       <link>https://vivian6f2.github.io/tags/binary-tree/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/binary-tree/</guid>
       <description></description>
@@ -59,7 +59,7 @@
     <item>
       <title>Bst</title>
       <link>https://vivian6f2.github.io/tags/bst/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/bst/</guid>
       <description></description>
@@ -113,7 +113,7 @@
     <item>
       <title>Hard</title>
       <link>https://vivian6f2.github.io/tags/hard/</link>
-      <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/hard/</guid>
       <description></description>
@@ -122,7 +122,7 @@
     <item>
       <title>Hash</title>
       <link>https://vivian6f2.github.io/tags/hash/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/hash/</guid>
       <description></description>
@@ -167,7 +167,7 @@
     <item>
       <title>Javascript</title>
       <link>https://vivian6f2.github.io/tags/javascript/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/javascript/</guid>
       <description></description>
@@ -192,9 +192,18 @@
     </item>
     
     <item>
+      <title>Linked List</title>
+      <link>https://vivian6f2.github.io/tags/linked-list/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/tags/linked-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Medium</title>
       <link>https://vivian6f2.github.io/tags/medium/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/medium/</guid>
       <description></description>
@@ -311,7 +320,7 @@
     <item>
       <title>Recursion</title>
       <link>https://vivian6f2.github.io/tags/recursion/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/recursion/</guid>
       <description></description>

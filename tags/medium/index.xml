@@ -6,7 +6,7 @@
     <description>Recent content in Medium on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>3 Sum</title>
       <link>https://vivian6f2.github.io/blog/3-sum/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/blog/3-sum/</guid>
       <description>3 Sum LeetCode #15 
@@ -26,7 +26,7 @@ My Thoughts Create a helper function twoSum(nums, target), to find if there are 
     <item>
       <title>Longest Substring Without Repeating Characters</title>
       <link>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</guid>
       <description>Longest Substring Without Repeating Characters LeetCode #3 
@@ -35,6 +35,20 @@ Examples:
 Given &amp;ldquo;abcabcbb&amp;rdquo;, the answer is &amp;ldquo;abc&amp;rdquo;, which the length is 3.
 Given &amp;ldquo;bbbbb&amp;rdquo;, the answer is &amp;ldquo;b&amp;rdquo;, with the length of 1.
 Given &amp;ldquo;pwwkew&amp;rdquo;, the answer is &amp;ldquo;wke&amp;rdquo;, with the length of 3. Note that the answer must be a substring, &amp;ldquo;pwke&amp;rdquo; is a subsequence and not a substring.</description>
+    </item>
+    
+    <item>
+      <title>Reorder List</title>
+      <link>https://vivian6f2.github.io/blog/reorder-list/</link>
+      <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/reorder-list/</guid>
+      <description>Reorder List LeetCode #143 
+Description Given a singly linked list L: L0?L1?…?Ln-1?Ln, reorder it to: L0?Ln?L1?Ln-1?L2?Ln-2?…
+You must do this in-place without altering the nodes&amp;rsquo; values.
+For example, Given {1,2,3,4}, reorder it to {1,4,2,3}. 
+My Thoughts I will divide this question into some smaller questions:
+ Find the middle of the linked list. Just use two pointers, slow and fast. Slow pointer takes one step everytime while fast pointer takes two step.</description>
     </item>
     
   </channel>

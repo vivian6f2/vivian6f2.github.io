@@ -75,52 +75,28 @@
     </item>
     
     <item>
-      <title>3 Sum</title>
-      <link>https://vivian6f2.github.io/blog/3-sum/</link>
+      <title>Moving Average from Data Stream</title>
+      <link>https://vivian6f2.github.io/blog/moving-average-from-data-stream/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://vivian6f2.github.io/blog/3-sum/</guid>
-      <description>3 Sum LeetCode #15 
-Description Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
-
-My Thoughts Create a helper function twoSum(nums, target), to find if there are any two elements A and B in nums, A + B = target.</description>
+      <guid>https://vivian6f2.github.io/blog/moving-average-from-data-stream/</guid>
+      <description>Moving Average from Data Stream LeetCode #346 
+Description Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+For example,
+MovingAverage m = new MovingAverage(3); m.next(1) = 1 m.next(10) = (1 + 10) / 2 m.next(3) = (1 + 10 + 3) / 3 m.next(5) = (10 + 3 + 5) / 3  
+My Thoughts For this question, because it is a data stream problem, I would like to do it with queue to make it first-in-first-out.</description>
     </item>
     
     <item>
-      <title>Convert Sorted Array to Binary Search Tree</title>
-      <link>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</link>
+      <title>Reverse Nodes in k-Group</title>
+      <link>https://vivian6f2.github.io/blog/reverse-nodes-in-k-group/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</guid>
-      <description>Convert Sorted Array to Binary Search Tree LeetCode #108 
-Description Given an array where elements are sorted in ascending order, convert it to a height balanced BST. 
-My Thoughts I like to do tree problem recursively if I can. And for this problem, I know I can do it recursively by dividing a big problem into two small problems until I can solve the question.
-Because I have to convert array to a height balanced BST, I think that I have to divide the array in the middle everytime.</description>
-    </item>
-    
-    <item>
-      <title>Longest Substring Without Repeating Characters</title>
-      <link>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</guid>
-      <description>Longest Substring Without Repeating Characters LeetCode #3 
-Description Given a string, find the length of the longest substring without repeating characters.
-Examples:
-Given &amp;ldquo;abcabcbb&amp;rdquo;, the answer is &amp;ldquo;abc&amp;rdquo;, which the length is 3.
-Given &amp;ldquo;bbbbb&amp;rdquo;, the answer is &amp;ldquo;b&amp;rdquo;, with the length of 1.
-Given &amp;ldquo;pwwkew&amp;rdquo;, the answer is &amp;ldquo;wke&amp;rdquo;, with the length of 3. Note that the answer must be a substring, &amp;ldquo;pwke&amp;rdquo; is a subsequence and not a substring.</description>
-    </item>
-    
-    <item>
-      <title>Merge Two Binary Trees</title>
-      <link>https://vivian6f2.github.io/blog/merge-two-binary-trees/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://vivian6f2.github.io/blog/merge-two-binary-trees/</guid>
-      <description>Merge Two Binary Trees LeetCode #617 
-Description Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.
-You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node.</description>
+      <guid>https://vivian6f2.github.io/blog/reverse-nodes-in-k-group/</guid>
+      <description>Reverse Nodes in k-Group LeetCode #25 
+Description Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
+k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
+You may not alter the values in the nodes, only nodes itself may be changed.</description>
     </item>
     
     <item>
@@ -151,6 +127,29 @@ If you are interested, feel free to take a look at github.</description>
     </item>
     
     <item>
+      <title>Convert Sorted Array to Binary Search Tree</title>
+      <link>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</guid>
+      <description>Convert Sorted Array to Binary Search Tree LeetCode #108 
+Description Given an array where elements are sorted in ascending order, convert it to a height balanced BST. 
+My Thoughts I like to do tree problem recursively if I can. And for this problem, I know I can do it recursively by dividing a big problem into two small problems until I can solve the question.
+Because I have to convert array to a height balanced BST, I think that I have to divide the array in the middle everytime.</description>
+    </item>
+    
+    <item>
+      <title>Merge Two Binary Trees</title>
+      <link>https://vivian6f2.github.io/blog/merge-two-binary-trees/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/merge-two-binary-trees/</guid>
+      <description>Merge Two Binary Trees LeetCode #617 
+Description Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.
+You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node.</description>
+    </item>
+    
+    <item>
       <title>What Happens When Typing URL Into The Browser</title>
       <link>https://vivian6f2.github.io/blog/what-happens-when-typing-url-into-the-browser/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
@@ -164,6 +163,32 @@ After user typed www.google.com in browser&amp;rsquo;s url bar and clicked enter
     </item>
     
     <item>
+      <title>3 Sum</title>
+      <link>https://vivian6f2.github.io/blog/3-sum/</link>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/3-sum/</guid>
+      <description>3 Sum LeetCode #15 
+Description Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+
+My Thoughts Create a helper function twoSum(nums, target), to find if there are any two elements A and B in nums, A + B = target.</description>
+    </item>
+    
+    <item>
+      <title>Longest Substring Without Repeating Characters</title>
+      <link>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</link>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</guid>
+      <description>Longest Substring Without Repeating Characters LeetCode #3 
+Description Given a string, find the length of the longest substring without repeating characters.
+Examples:
+Given &amp;ldquo;abcabcbb&amp;rdquo;, the answer is &amp;ldquo;abc&amp;rdquo;, which the length is 3.
+Given &amp;ldquo;bbbbb&amp;rdquo;, the answer is &amp;ldquo;b&amp;rdquo;, with the length of 1.
+Given &amp;ldquo;pwwkew&amp;rdquo;, the answer is &amp;ldquo;wke&amp;rdquo;, with the length of 3. Note that the answer must be a substring, &amp;ldquo;pwke&amp;rdquo; is a subsequence and not a substring.</description>
+    </item>
+    
+    <item>
       <title>How Many Combination Results</title>
       <link>https://vivian6f2.github.io/blog/how-many-combination-results/</link>
       <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
@@ -173,6 +198,20 @@ After user typed www.google.com in browser&amp;rsquo;s url bar and clicked enter
 Description Given an array of numbers, put [+, -, *, /] randomly between every two numbers. Compute and list all possible results.
 
 My Thoughts I think I can do it both iteratively and recursively. If I want to do it iteratively, then I need a stack or a queue. While I do it recursively, then I just have to push result into array when I finish computing last number.</description>
+    </item>
+    
+    <item>
+      <title>Reorder List</title>
+      <link>https://vivian6f2.github.io/blog/reorder-list/</link>
+      <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/reorder-list/</guid>
+      <description>Reorder List LeetCode #143 
+Description Given a singly linked list L: L0?L1?…?Ln-1?Ln, reorder it to: L0?Ln?L1?Ln-1?L2?Ln-2?…
+You must do this in-place without altering the nodes&amp;rsquo; values.
+For example, Given {1,2,3,4}, reorder it to {1,4,2,3}. 
+My Thoughts I will divide this question into some smaller questions:
+ Find the middle of the linked list. Just use two pointers, slow and fast. Slow pointer takes one step everytime while fast pointer takes two step.</description>
     </item>
     
     <item>

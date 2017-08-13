@@ -12,9 +12,22 @@
     
     
     <item>
+      <title>Moving Average from Data Stream</title>
+      <link>https://vivian6f2.github.io/blog/moving-average-from-data-stream/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/moving-average-from-data-stream/</guid>
+      <description>Moving Average from Data Stream LeetCode #346 
+Description Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+For example,
+MovingAverage m = new MovingAverage(3); m.next(1) = 1 m.next(10) = (1 + 10) / 2 m.next(3) = (1 + 10 + 3) / 3 m.next(5) = (10 + 3 + 5) / 3  
+My Thoughts For this question, because it is a data stream problem, I would like to do it with queue to make it first-in-first-out.</description>
+    </item>
+    
+    <item>
       <title>Longest Substring Without Repeating Characters</title>
       <link>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/blog/longest-substring-without-repeating-characters/</guid>
       <description>Longest Substring Without Repeating Characters LeetCode #3 

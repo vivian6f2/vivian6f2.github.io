@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Leetcode</title>
+        <title>Moving Average from Data Stream</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Leetcode</a>
+                    <a class="navbar-brand visible-xs" href="#">Moving Average from Data Stream</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -118,28 +118,100 @@
 
 <main>
 
-    <h2>Leetcode</h2>
-
-     <div class="item">
-
+    
 	
 
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/moving-average-from-data-stream/">
-    
-    Moving Average from Data Stream</a></h4>
-
-    <h5>August 12, 2017</h5>
+	<h2>Moving Average from Data Stream</h2>
+	<h6>August 12, 2017</h6>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Queue</kbd> 
 
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="moving-average-from-data-stream">Moving Average from Data Stream</h2>
+
+<h6 id="leetcode-346">LeetCode #346</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.</p>
+
+<p>For example,</p>
+
+<pre><code>MovingAverage m = new MovingAverage(3);
+m.next(1) = 1
+m.next(10) = (1 + 10) / 2
+m.next(3) = (1 + 10 + 3) / 3
+m.next(5) = (10 + 3 + 5) / 3
+</code></pre>
+
+<p><br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>For this question, because it is a data stream problem, I would like to do it with queue to make it first-in-first-out.</p>
+
+<p>For the data structure, I need three object:</p>
+
+<ul>
+<li>window, which is a queue to save the data I need.</li>
+<li>capacity, the maximum number of data I can put into queue.</li>
+<li>size, the number of the queue.</li>
+</ul>
+
+<p>And for the function named next, I have to two things:</p>
+
+<ol>
+<li>Check the number of elements in window now and push input value. If needed, pop the first element from the queue.</li>
+<li>Calculate average and return.</li>
+</ol>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code>class MovingAverage(object):
+
+    def __init__(self, size):
+        &quot;&quot;&quot;
+        Initialize your data structure here.
+        :type size: int
+        &quot;&quot;&quot;
+        self.window = []
+        self.size = 0
+        self.capacity = size
+
+    def next(self, val):
+        &quot;&quot;&quot;
+        :type val: int
+        :rtype: float
+        &quot;&quot;&quot;
+        if self.size&lt;self.capacity:
+            self.window.append(val)
+            self.size+=1
+        else:
+            self.window.append(val)
+            self.window.pop(0)
+        ans = float(sum(self.window))/float(self.size)
+        return ans
+
+
+# Your MovingAverage object will be instantiated and called as such:
+# obj = MovingAverage(size)
+# param_1 = obj.next(val)
+</code></pre>
 </div>
-  <div class="item">
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
 
 	
 
@@ -156,25 +228,6 @@
 
     <h5>August 12, 2017</h5>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/convert-sorted-array-to-binary-search-tree/">
-    
-    Convert Sorted Array to Binary Search Tree</a></h4>
-
-    <h5>August 9, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">BST</kbd>  <kbd class="item-tag">Recursion</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
 
 </div>
   <div class="item">
@@ -207,72 +260,17 @@
     
     
 
-    <h4><a href="/blog/3-sum/">
+    <h4><a href="/blog/convert-sorted-array-to-binary-search-tree/">
     
-    3 Sum</a></h4>
+    Convert Sorted Array to Binary Search Tree</a></h4>
 
-    <h5>August 8, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">JavaScript</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/longest-substring-without-repeating-characters/">
-    
-    Longest Substring Without Repeating Characters</a></h4>
-
-    <h5>August 8, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Hash</kbd>  <kbd class="item-tag">Queue</kbd>  <kbd class="item-tag">JavaScript</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/reorder-list/">
-    
-    Reorder List</a></h4>
-
-    <h5>August 7, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Linked List</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Pointer</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/trapping-rain-water/">
-    
-    Trapping Rain Water</a></h4>
-
-    <h5>August 7, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Pointer</kbd> 
+    <h5>August 9, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">BST</kbd>  <kbd class="item-tag">Recursion</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
 
 </div>
  
+
+    
 
 </main>
 

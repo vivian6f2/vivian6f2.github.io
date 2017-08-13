@@ -12,6 +12,20 @@
     
     
     <item>
+      <title>Reorder List</title>
+      <link>https://vivian6f2.github.io/blog/reorder-list/</link>
+      <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/reorder-list/</guid>
+      <description>Reorder List LeetCode #143 
+Description Given a singly linked list L: L0?L1?…?Ln-1?Ln, reorder it to: L0?Ln?L1?Ln-1?L2?Ln-2?…
+You must do this in-place without altering the nodes&amp;rsquo; values.
+For example, Given {1,2,3,4}, reorder it to {1,4,2,3}. 
+My Thoughts I will divide this question into some smaller questions:
+ Find the middle of the linked list. Just use two pointers, slow and fast. Slow pointer takes one step everytime while fast pointer takes two step.</description>
+    </item>
+    
+    <item>
       <title>Trapping Rain Water</title>
       <link>https://vivian6f2.github.io/blog/trapping-rain-water/</link>
       <pubDate>Mon, 07 Aug 2017 00:00:00 +0000</pubDate>

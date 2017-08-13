@@ -6,7 +6,7 @@
     <description>Recent content in Recursion on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/recursion/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Convert Sorted Array to Binary Search Tree</title>
       <link>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</guid>
       <description>Convert Sorted Array to Binary Search Tree LeetCode #108 
@@ -26,7 +26,7 @@ Because I have to convert array to a height balanced BST, I think that I have to
     <item>
       <title>Merge Two Binary Trees</title>
       <link>https://vivian6f2.github.io/blog/merge-two-binary-trees/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/blog/merge-two-binary-trees/</guid>
       <description>Merge Two Binary Trees LeetCode #617 
