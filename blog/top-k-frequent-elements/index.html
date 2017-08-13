@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Leetcode</title>
+        <title>Top K Frequent Elements</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Leetcode</a>
+                    <a class="navbar-brand visible-xs" href="#">Top K Frequent Elements</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -118,9 +118,114 @@
 
 <main>
 
-    <h2>Leetcode</h2>
+    
+	
 
-     <div class="item">
+	<h2>Top K Frequent Elements</h2>
+    <h6>August 13, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Heap</kbd> 
+
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="top-k-frequent-elements">Top K Frequent Elements</h2>
+
+<h6 id="leetcode-347">LeetCode #347</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given a non-empty array of integers, return the k most frequent elements.</p>
+
+<p>For example,</p>
+
+<p>Given [1,1,1,2,2,3] and k = 2, return [1,2].</p>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+<li>You may assume k is always valid, 1 ? k ? number of unique elements.</li>
+<li>Your algorithm&rsquo;s time complexity must be better than O(n log n), where n is the array&rsquo;s size.</li>
+</ul>
+
+<p><br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>I can divide this question into two parts:</p>
+
+<ol>
+<li>Run through the whole array and count how many times a number comes up. And store number and count pair in hash table. -&gt; O(n)</li>
+<li>Find out the k most frequent elements. And there are two ways to do it:
+
+<ul>
+<li>Sort the result and get top k elements. -&gt; O(n log n) X</li>
+<li>Use a min-heap to save the top k elements. -&gt; O(n) O</li>
+</ul></li>
+</ol>
+
+<p>Therefore, I would like to do the second part with min-heap, and the following conditions are when I have to push or pop the min-heap:</p>
+
+<ul>
+<li>If the size of min-heap &lt; k, I can just push element into the heap.</li>
+<li>If the size of min-heap = k, then:
+
+<ul>
+<li>If min-heap.top() &gt; current count, it means that current number doesn&rsquo;t come up more frequently than all the numbers in the heap, so just skip this number and keep doing.</li>
+<li>If min-heap.top() &lt; current count, it means that current number should be in the min-heap. Pop min-heap and push current number into the heap.</li>
+</ul></li>
+</ul>
+
+<p>After that, just return all the elements in min-heap.</p>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code>from heapq import heappush, heappop
+
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        table = {}
+        for i in range(0, len(nums)):
+            if nums[i] not in table:
+                table[nums[i]] = [nums[i], 1]
+            else:
+                (table[nums[i]])[1] += 1
+        
+        minHeap = []
+        for key in table:
+            if len(minHeap) &lt; k:
+                heappush(minHeap, (table[key][1], table[key][0]))
+            else:
+                tmp = heappop(minHeap)
+                if tmp[0] &gt; table[key][1]:
+                    heappush(minHeap, tmp)
+                else:
+                    heappush(minHeap, (table[key][1], table[key][0]))
+        
+        ans = []
+        while minHeap:
+            ans.insert(0, heappop(minHeap)[1])
+            
+        return ans
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
 
 	
 
@@ -131,12 +236,12 @@
     
     
 
-    <h4><a href="/blog/reverse-nodes-in-k-group/">
+    <h4><a href="/blog/copy-list-with-random-pointer/">
     
-    Reverse Nodes in k-Group</a></h4>
+    Copy List with Random Pointer</a></h4>
 
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd> 
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd>  <kbd class="item-tag">Hash Table</kbd> 
 
 </div>
   <div class="item">
@@ -150,12 +255,12 @@
     
     
 
-    <h4><a href="/blog/simplify-path/">
+    <h4><a href="/blog/binary-tree-preorder-traversal/">
     
-    Simplify Path</a></h4>
+    Binary Tree Preorder Traversal</a></h4>
 
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">String</kbd> 
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
 
 </div>
   <div class="item">
@@ -169,126 +274,19 @@
     
     
 
-    <h4><a href="/blog/convert-sorted-array-to-binary-search-tree/">
+    <h4><a href="/blog/binary-tree-postorder-traversal/">
     
-    Convert Sorted Array to Binary Search Tree</a></h4>
+    Binary Tree Postorder Traversal</a></h4>
 
-    <h5>August 9, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">BST</kbd>  <kbd class="item-tag">Recursion</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/merge-two-binary-trees/">
-    
-    Merge Two Binary Trees</a></h4>
-
-    <h5>August 9, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Recursion</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/3-sum/">
-    
-    3 Sum</a></h4>
-
-    <h5>August 8, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">JavaScript</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/longest-substring-without-repeating-characters/">
-    
-    Longest Substring Without Repeating Characters</a></h4>
-
-    <h5>August 8, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Hash</kbd>  <kbd class="item-tag">Queue</kbd>  <kbd class="item-tag">JavaScript</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/reorder-list/">
-    
-    Reorder List</a></h4>
-
-    <h5>August 7, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Linked List</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Pointer</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/trapping-rain-water/">
-    
-    Trapping Rain Water</a></h4>
-
-    <h5>August 7, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Pointer</kbd> 
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Stack</kbd> 
 
 </div>
  
 
+    
+
 </main>
-
-
-
-    <div class="pages">
-
-        
-            <a class="icon pages-icon" href="/tags/leetcode/" rel="prev">
-                <i class="fa fa-arrow-left"></i>
-            </a>
-        
-
-        
-
-    </div>
 
 
 

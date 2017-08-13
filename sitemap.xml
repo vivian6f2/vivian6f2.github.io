@@ -46,6 +46,16 @@
   </url>
   
   <url>
+    <loc>https://vivian6f2.github.io/blog/copy-list-with-random-pointer/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vivian6f2.github.io/blog/top-k-frequent-elements/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vivian6f2.github.io/blog/4-sum/</loc>
     <lastmod>2017-08-12T00:00:00+00:00</lastmod>
   </url>
@@ -225,7 +235,13 @@
   
   <url>
     <loc>https://vivian6f2.github.io/tags/hash-table/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vivian6f2.github.io/tags/heap/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -272,7 +288,7 @@
   
   <url>
     <loc>https://vivian6f2.github.io/tags/linked-list/</loc>
-    <lastmod>2017-08-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

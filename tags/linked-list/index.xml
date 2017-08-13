@@ -6,10 +6,23 @@
     <description>Recent content in Linked List on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/linked-list/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Copy List with Random Pointer</title>
+      <link>https://vivian6f2.github.io/blog/copy-list-with-random-pointer/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/copy-list-with-random-pointer/</guid>
+      <description>Copy List with Random Pointer LeetCode #138 
+Description A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
+Return a deep copy of the list.
+
+My Thoughts Because there is a random pointer for every node, I think it is impossible to copy list with one loop. And I also need to save every node first becuase there is a random pointer, and I am not sure where it is linked to.</description>
+    </item>
     
     <item>
       <title>Reverse Nodes in k-Group</title>
