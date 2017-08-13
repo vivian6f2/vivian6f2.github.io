@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Convert Sorted Array to Binary Search Tree</title>
+        <title>Array</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Convert Sorted Array to Binary Search Tree</a>
+                    <a class="navbar-brand visible-xs" href="#">Array</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -118,84 +118,9 @@
 
 <main>
 
-    
-	
+    <h2>Array</h2>
 
-	<h2>Convert Sorted Array to Binary Search Tree</h2>
-    <h6>August 9, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">BST</kbd>  <kbd class="item-tag">Recursion</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
-
-    <br><br>
-    <div class="text-justify">
-
-<h2 id="convert-sorted-array-to-binary-search-tree">Convert Sorted Array to Binary Search Tree</h2>
-
-<h6 id="leetcode-108">LeetCode #108</h6>
-
-<p><br/></p>
-
-<h4 id="description">Description</h4>
-
-<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
-<br/></p>
-
-<h4 id="my-thoughts">My Thoughts</h4>
-
-<p>I like to do tree problem recursively if I can. And for this problem, I know I can do it recursively by dividing a big problem into two small problems until I can solve the question.</p>
-
-<p>Because I have to convert array to a <strong>height balanced</strong> BST, I think that I have to divide the array in the middle everytime. And call the recursive function two times for left array and right array. And also handle boundary case at the beginning of my recursive function.</p>
-
-<p>So my recursive function will look like:</p>
-
-<pre><code>def recursiveFunction(nums):
-    # Boundary condition
-    if nothing in nums: 
-        return None
-
-    # General condition
-    mid = middle index of nums
-    TreeNode.val = nums[mid]
-    TreeNode.left = recursiveFunction(left array)
-    TreeNode.right = recursiveFunction(right array)
-    return TreeNode
-</code></pre>
-
-<p><br/></p>
-
-<h4 id="solution">Solution</h4>
-
-<pre><code># Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
-class Solution(object):
-    def sortedArrayToBST(self, nums):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :rtype: TreeNode
-        &quot;&quot;&quot;
-        if len(nums)==0: return None
-        
-        mid =(len(nums)-1)/2
-        BST = TreeNode(0)
-        BST.val = nums[mid]
-        BST.left = self.sortedArrayToBST(nums[0:mid])
-        BST.right = self.sortedArrayToBST(nums[mid+1:len(nums)])
-        return BST
-</code></pre>
-</div>
-
-    
-    
-
-    
-
-        <h4 class="page-header">Related</h4>
-
-         <div class="item">
+     <div class="item">
 
 	
 
@@ -206,55 +131,15 @@ class Solution(object):
     
     
 
-    <h4><a href="/blog/simplify-path/">
+    <h4><a href="/blog/largest-rectangle-in-histogram/">
     
-    Simplify Path</a></h4>
+    Largest Rectangle in Histogram</a></h4>
 
     <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">String</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/reverse-nodes-in-k-group/">
-    
-    Reverse Nodes in k-Group</a></h4>
-
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/moving-average-from-data-stream/">
-    
-    Moving Average from Data Stream</a></h4>
-
-    <h5>August 12, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Queue</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Stack</kbd> 
 
 </div>
  
-
-    
 
 </main>
 

@@ -55,6 +55,22 @@ You may not alter the values in the nodes, only nodes itself may be changed.</de
     </item>
     
     <item>
+      <title>Simplify Path</title>
+      <link>https://vivian6f2.github.io/blog/simplify-path/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/simplify-path/</guid>
+      <description>Simplify Path LeetCode #71 
+Description Given an absolute path for a file (Unix-style), simplify it.
+For example,
+path = &amp;ldquo;/home/&amp;rdquo;, =&amp;gt; &amp;ldquo;/home&amp;rdquo;
+path = &amp;ldquo;/a/./b/../../c/&amp;rdquo;, =&amp;gt; &amp;ldquo;/c&amp;rdquo;
+
+My Thoughts I will use stack to solve this problem. And there are some conditions that I will push or pop the stack:
+ If I get nothing after &amp;ldquo;/&amp;rdquo;, do nothing. If I get &amp;ldquo;pathname/&amp;rdquo;, push &amp;ldquo;pathname/&amp;rdquo; into stack. If I get &amp;ldquo;.</description>
+    </item>
+    
+    <item>
       <title>Convert Sorted Array to Binary Search Tree</title>
       <link>https://vivian6f2.github.io/blog/convert-sorted-array-to-binary-search-tree/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>

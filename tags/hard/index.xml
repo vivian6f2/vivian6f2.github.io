@@ -12,6 +12,21 @@
     
     
     <item>
+      <title>Largest Rectangle in Histogram</title>
+      <link>https://vivian6f2.github.io/blog/largest-rectangle-in-histogram/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/largest-rectangle-in-histogram/</guid>
+      <description>Largest Rectangle in Histogram LeetCode #84 
+Description Given n non-negative integers representing the histogram&amp;rsquo;s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
+For example,
+Given heights = [2,1,5,6,2,3],
+return 10.
+
+My Thoughts At first, this question let me think about Trapping Rain Water. I think I can also do it with two pointers, left and right. And just find pairs of left and right that between them, all the value is not less than left and right.</description>
+    </item>
+    
+    <item>
       <title>Reverse Nodes in k-Group</title>
       <link>https://vivian6f2.github.io/blog/reverse-nodes-in-k-group/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>

@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Convert Sorted Array to Binary Search Tree</title>
+        <title>Largest Rectangle in Histogram</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Convert Sorted Array to Binary Search Tree</a>
+                    <a class="navbar-brand visible-xs" href="#">Largest Rectangle in Histogram</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,70 +121,82 @@
     
 	
 
-	<h2>Convert Sorted Array to Binary Search Tree</h2>
-    <h6>August 9, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">BST</kbd>  <kbd class="item-tag">Recursion</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
+	<h2>Largest Rectangle in Histogram</h2>
+    <h6>August 12, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Stack</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="convert-sorted-array-to-binary-search-tree">Convert Sorted Array to Binary Search Tree</h2>
+<h2 id="largest-rectangle-in-histogram">Largest Rectangle in Histogram</h2>
 
-<h6 id="leetcode-108">LeetCode #108</h6>
+<h6 id="leetcode-84">LeetCode #84</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
-<br/></p>
+<p>Given n non-negative integers representing the histogram&rsquo;s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.</p>
+
+<p>For example,</p>
+
+<p>Given heights = [2,1,5,6,2,3],</p>
+
+<p>return 10.</p>
+
+<p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>I like to do tree problem recursively if I can. And for this problem, I know I can do it recursively by dividing a big problem into two small problems until I can solve the question.</p>
+<p>At first, this question let me think about <a href="/blog/trapping-rain-water/">Trapping Rain Water</a>. I think I can also do it with two pointers, left and right. And just find pairs of left and right that between them, all the value is not less than left and right. While I don&rsquo;t have to sum up all the value of these pairs. But after thinking more about it, I find out it is not correct. And then I think that maybe I can do it with finding left and right boundaries from every index, both left and right boundaries are smaller than value at index. Then I can get all possible answer with O(n^2).</p>
 
-<p>Because I have to convert array to a <strong>height balanced</strong> BST, I think that I have to divide the array in the middle everytime. And call the recursive function two times for left array and right array. And also handle boundary case at the beginning of my recursive function.</p>
+<p>However, it is unnecessary to find all areas. So I would like to try to do it with stack and push index into it or pop from it. And the followings are conditions that I will push or pop stack:</p>
 
-<p>So my recursive function will look like:</p>
+<ul>
+<li>If value at current index &gt; stack.peek(), push current index into stack.</li>
+<li>If stack is empty, push current index into stack.</li>
+<li>If value at current index &lt;= stack.peek(), then height = value at stack.pop() and calculate the area from left to right = index, where left = stack.peek() + 1. Keep poping the stack until index &gt; stack.peek() again or until nothing left in stack.</li>
+</ul>
 
-<pre><code>def recursiveFunction(nums):
-    # Boundary condition
-    if nothing in nums: 
-        return None
-
-    # General condition
-    mid = middle index of nums
-    TreeNode.val = nums[mid]
-    TreeNode.left = recursiveFunction(left array)
-    TreeNode.right = recursiveFunction(right array)
-    return TreeNode
-</code></pre>
+<p>And I also need a variable maximum_area to save the maximum area in histogram.</p>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
-<pre><code># Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
-class Solution(object):
-    def sortedArrayToBST(self, nums):
+<pre><code>class Solution(object):
+    def largestRectangleArea(self, heights):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :rtype: TreeNode
+        :type heights: List[int]
+        :rtype: int
         &quot;&quot;&quot;
-        if len(nums)==0: return None
-        
-        mid =(len(nums)-1)/2
-        BST = TreeNode(0)
-        BST.val = nums[mid]
-        BST.left = self.sortedArrayToBST(nums[0:mid])
-        BST.right = self.sortedArrayToBST(nums[mid+1:len(nums)])
-        return BST
+        if len(heights) == 0 or heights == None:
+            return 0
+        if len(heights) == 1:
+            return heights[0]
+        stack = []
+        max_area = 0
+        for index in range(0, len(heights)+1):
+            if index == len(heights):
+                curHeight = 0
+            else:
+                curHeight = heights[index]
+                
+            while (len(stack)&gt;0 and heights[stack[len(stack)-1]] &gt;= curHeight):
+                height = heights[stack.pop()]
+                &quot;&quot;&quot;
+                left is not the first pop!
+                &quot;&quot;&quot;
+                if len(stack) == 0:
+                    left = 0
+                else:
+                    left = stack[len(stack)-1] + 1
+                
+                max_area = max(max_area, height*(index-left))
+            
+            stack.append(index)
+                
+        return max_area
 </code></pre>
 </div>
 
