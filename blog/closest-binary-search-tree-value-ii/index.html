@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <title>Closest Binary Search Tree Value II</title>
+
+        <style>
+
+    html body {
+        font-family: Raleway, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #75BAFF;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c&#43;&#43;.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/html.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <meta name="generator" content="Hugo 0.26" />
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Closest Binary Search Tree Value II</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/blog/">Blog</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                                <li><a href="/resume">Resume</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:6f2vivian@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/vivian6f2/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ting-hsuan-lin-829138133/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    
+	
+
+	<h2>Closest Binary Search Tree Value II</h2>
+    <h6>August 13, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Tree</kbd>  <kbd class="item-tag">Stack</kbd> 
+
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="closest-binary-search-tree-value-ii">Closest Binary Search Tree Value II</h2>
+
+<h6 id="leetcode-272">LeetCode #272</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given a non-empty binary search tree and a target value, find k values in the BST that are closest to the target.</p>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+<li>Given target value is a floating point.</li>
+<li>You may assume k is always valid, that is: k ≤ total nodes.</li>
+<li>You are guaranteed to have only one unique set of k values in the BST that are closest to the target.</li>
+</ul>
+
+<p><strong>Follow up:</strong></p>
+
+<p>Assume that the BST is balanced, could you solve it in less than O(n) runtime (where n = total nodes)?</p>
+
+<p><br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>It takes too much time to do it brute force. That is pushing all elements into array and find the k nearest values.</p>
+
+<p>I would try to do it with two stacks, one for larger numbers and another for smaller numbers. And run through the tree to push numbers into them.</p>
+
+<ul>
+<li>Smaller stack:
+Pass the tree inorder (left child, current node, right child) and push the value that is smaller than target.</li>
+<li>Larger stack:
+Pass the tree with the order of right child, current node, and left child. And also push the value that is larger than target.</li>
+</ul>
+
+<p>After that, just run a while loop with k &gt; 0. And pop the value in smaller or larger stack where the value is closer to target, and k&ndash;.</p>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code># Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def closestKValues(self, root, target, k):
+        &quot;&quot;&quot;
+        :type root: TreeNode
+        :type target: float
+        :type k: int
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        self.small = []
+        self.large = []
+        
+        def fillSmallStack(root):
+            if root == None: 
+                return
+            fillSmallStack(root.left)
+            if root.val &gt; target: 
+            	# all the value after root.right is larger than target
+                return
+            self.small.append(root.val)
+            fillSmallStack(root.right)
+        def fillLargeStack(root):
+            if root == None: 
+                return
+            fillLargeStack(root.right)
+            if root.val &lt;= target: 
+            	# all the value after root.left is smaller than target
+                return
+            self.large.append(root.val)
+            fillLargeStack(root.left)
+            
+        fillSmallStack(root)
+        fillLargeStack(root)
+        ans = []
+        while k &gt; 0:
+            k -= 1
+            if len(self.large) == 0:
+                ans.append(self.small.pop())
+            elif len(self.small) == 0:
+                ans.append(self.large.pop())
+            elif (target - self.small[-1]) &lt; (self.large[-1] - target):
+                ans.append(self.small.pop())
+            else:
+                ans.append(self.large.pop())
+        return ans
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/top-k-frequent-elements/">
+    
+    Top K Frequent Elements</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Heap</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/sort-transformed-array/">
+    
+    Sort Transformed Array</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Math</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/remove-k-digits/">
+    
+    Remove K Digits</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Greedy</kbd> 
+
+</div>
+ 
+
+    
+
+</main>
+
+
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Website built by Ting-Hsuan Lin (Vivian)</p>
+
+        </footer>
+
+    </body>
+
+</html>
+

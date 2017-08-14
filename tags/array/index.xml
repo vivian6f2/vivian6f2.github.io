@@ -6,10 +6,22 @@
     <description>Recent content in Array on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/array/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>3 Sum Smaller</title>
+      <link>https://vivian6f2.github.io/blog/3-sum-smaller/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/3-sum-smaller/</guid>
+      <description>3 Sum Smaller LeetCode #259 
+Description Given an array of n integers nums and a target, find the number of index triplets i, j, k with 0 &amp;lt;= i &amp;lt; j &amp;lt; k &amp;lt; n that satisfy the condition nums[i] + nums[j] + nums[k] &amp;lt; target.
+For example, given nums = [-2, 0, 1, 3], and target = 2.
+Return 2. Because there are two triplets which sums are less than 2:</description>
+    </item>
     
     <item>
       <title>4 Sum</title>

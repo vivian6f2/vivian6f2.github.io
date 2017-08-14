@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math on Ting-Hsuan Lin</title>
+    <link>https://vivian6f2.github.io/tags/math/</link>
+    <description>Recent content in Math on Ting-Hsuan Lin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vivian6f2.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sort Transformed Array</title>
+      <link>https://vivian6f2.github.io/blog/sort-transformed-array/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/sort-transformed-array/</guid>
+      <description>Sort Transformed Array LeetCode #360 
+Description Given a sorted array of integers nums and integer values a, b and c. Apply a function of the form f(x) = ax^2 + bx + c to each element x in the array.
+The returned array must be in sorted order.
+Expected time complexity: O(n)
+Example:
+nums = [-4, -2, 2, 4], a = 1, b = 3, c = 5,</description>
+    </item>
+    
+  </channel>
+</rss>

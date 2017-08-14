@@ -30,6 +30,18 @@
     </item>
     
     <item>
+      <title>3 Sum Smaller</title>
+      <link>https://vivian6f2.github.io/blog/3-sum-smaller/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/3-sum-smaller/</guid>
+      <description>3 Sum Smaller LeetCode #259 
+Description Given an array of n integers nums and a target, find the number of index triplets i, j, k with 0 &amp;lt;= i &amp;lt; j &amp;lt; k &amp;lt; n that satisfy the condition nums[i] + nums[j] + nums[k] &amp;lt; target.
+For example, given nums = [-2, 0, 1, 3], and target = 2.
+Return 2. Because there are two triplets which sums are less than 2:</description>
+    </item>
+    
+    <item>
       <title>Binary Tree Inorder Traversal</title>
       <link>https://vivian6f2.github.io/blog/binary-tree-inorder-traversal/</link>
       <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
@@ -83,6 +95,18 @@ It is always easy to do tree problem recursively. If I want to do it iteratively
     </item>
     
     <item>
+      <title>Closest Binary Search Tree Value II</title>
+      <link>https://vivian6f2.github.io/blog/closest-binary-search-tree-value-ii/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/closest-binary-search-tree-value-ii/</guid>
+      <description>Closest Binary Search Tree Value II LeetCode #272 
+Description Given a non-empty binary search tree and a target value, find k values in the BST that are closest to the target.
+Note:
+ Given target value is a floating point. You may assume k is always valid, that is: k ≤ total nodes. You are guaranteed to have only one unique set of k values in the BST that are closest to the target.</description>
+    </item>
+    
+    <item>
       <title>Copy List with Random Pointer</title>
       <link>https://vivian6f2.github.io/blog/copy-list-with-random-pointer/</link>
       <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
@@ -93,6 +117,47 @@ Description A linked list is given such that each node contains an additional ra
 Return a deep copy of the list.
 
 My Thoughts Because there is a random pointer for every node, I think it is impossible to copy list with one loop. And I also need to save every node first becuase there is a random pointer, and I am not sure where it is linked to.</description>
+    </item>
+    
+    <item>
+      <title>Linked List Cycle II</title>
+      <link>https://vivian6f2.github.io/blog/linked-list-cycle-ii/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/linked-list-cycle-ii/</guid>
+      <description>Linked List Cycle II LeetCode #142 
+Description Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+Note: Do not modify the linked list.
+Follow up: Can you solve it without using extra space?
+
+My Thoughts To check if I have already been to a node, I can add a hash map to store every node I gone through. However, if I use a hash map, I need O(n) extra space.</description>
+    </item>
+    
+    <item>
+      <title>Remove K Digits</title>
+      <link>https://vivian6f2.github.io/blog/remove-k-digits/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/remove-k-digits/</guid>
+      <description>Remove K Digits LeetCode #402 
+Description Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.
+Note:
+ The length of num is less than 10002 and will be ≥ k. The given num does not contain any leading zero.  Example 1:
+Input: num = &amp;quot;1432219&amp;quot;, k = 3 Output: &amp;quot;1219&amp;quot; Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.</description>
+    </item>
+    
+    <item>
+      <title>Sort Transformed Array</title>
+      <link>https://vivian6f2.github.io/blog/sort-transformed-array/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/sort-transformed-array/</guid>
+      <description>Sort Transformed Array LeetCode #360 
+Description Given a sorted array of integers nums and integer values a, b and c. Apply a function of the form f(x) = ax^2 + bx + c to each element x in the array.
+The returned array must be in sorted order.
+Expected time complexity: O(n)
+Example:
+nums = [-4, -2, 2, 4], a = 1, b = 3, c = 5,</description>
     </item>
     
     <item>

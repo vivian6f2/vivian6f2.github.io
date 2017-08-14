@@ -30,6 +30,18 @@ At first it is hard to figure out how to do it.</description>
     </item>
     
     <item>
+      <title>Closest Binary Search Tree Value II</title>
+      <link>https://vivian6f2.github.io/blog/closest-binary-search-tree-value-ii/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/closest-binary-search-tree-value-ii/</guid>
+      <description>Closest Binary Search Tree Value II LeetCode #272 
+Description Given a non-empty binary search tree and a target value, find k values in the BST that are closest to the target.
+Note:
+ Given target value is a floating point. You may assume k is always valid, that is: k ≤ total nodes. You are guaranteed to have only one unique set of k values in the BST that are closest to the target.</description>
+    </item>
+    
+    <item>
       <title>Largest Rectangle in Histogram</title>
       <link>https://vivian6f2.github.io/blog/largest-rectangle-in-histogram/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>

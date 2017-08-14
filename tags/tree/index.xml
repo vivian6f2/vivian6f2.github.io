@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tree on Ting-Hsuan Lin</title>
+    <link>https://vivian6f2.github.io/tags/tree/</link>
+    <description>Recent content in Tree on Ting-Hsuan Lin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vivian6f2.github.io/tags/tree/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Closest Binary Search Tree Value II</title>
+      <link>https://vivian6f2.github.io/blog/closest-binary-search-tree-value-ii/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/closest-binary-search-tree-value-ii/</guid>
+      <description>Closest Binary Search Tree Value II LeetCode #272 
+Description Given a non-empty binary search tree and a target value, find k values in the BST that are closest to the target.
+Note:
+ Given target value is a floating point. You may assume k is always valid, that is: k ≤ total nodes. You are guaranteed to have only one unique set of k values in the BST that are closest to the target.</description>
+    </item>
+    
+  </channel>
+</rss>

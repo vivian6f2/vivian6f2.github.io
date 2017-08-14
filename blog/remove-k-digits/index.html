@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <title>Remove K Digits</title>
+
+        <style>
+
+    html body {
+        font-family: Raleway, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #75BAFF;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c&#43;&#43;.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/html.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <meta name="generator" content="Hugo 0.26" />
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Remove K Digits</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/blog/">Blog</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                                <li><a href="/resume">Resume</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:6f2vivian@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/vivian6f2/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ting-hsuan-lin-829138133/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    
+	
+
+	<h2>Remove K Digits</h2>
+    <h6>August 13, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Greedy</kbd> 
+
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="remove-k-digits">Remove K Digits</h2>
+
+<h6 id="leetcode-402">LeetCode #402</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.</p>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+<li>The length of num is less than 10002 and will be ≥ k.</li>
+<li>The given num does not contain any leading zero.</li>
+</ul>
+
+<p>Example 1:</p>
+
+<pre><code>Input: num = &quot;1432219&quot;, k = 3
+Output: &quot;1219&quot;
+Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.
+</code></pre>
+
+<p>Example 2:</p>
+
+<pre><code>Input: num = &quot;10200&quot;, k = 1
+Output: &quot;200&quot;
+Explanation: Remove the leading 1 and the number is 200. Note that the output must not contain leading zeroes.
+</code></pre>
+
+<p>Example 3:</p>
+
+<pre><code>Input: num = &quot;10&quot;, k = 2
+Output: &quot;0&quot;
+Explanation: Remove all the digits from the number and it is left with nothing which is 0.
+</code></pre>
+
+<p><br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>If I do it brute force, it takes too much time. So I think about using stack for this problem. The followings are conditions to push or pop stack:</p>
+
+<ul>
+<li>If stack is empty, push current number into it.</li>
+<li>If stack.peek() &gt; current number and k &gt; 0, it means that if I discard previous number, I can get a smaller answer. Do stack.pop and k&ndash; in while loop until k = 0 or stack is empty or the number is smaller enough.</li>
+<li>push current number after above stuff.</li>
+</ul>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code>class Solution(object):
+    def removeKdigits(self, num, k):
+        &quot;&quot;&quot;
+        :type num: str
+        :type k: int
+        :rtype: str
+        &quot;&quot;&quot;
+        if k == len(num):
+            return &quot;0&quot;
+        
+        ans = []
+        for index in range(0, len(num)):
+            while(k &gt; 0 and len(ans)&gt;0 and ans[-1] &gt; num[index]):
+                ans.pop()
+                k -= 1
+            ans.append(num[index])
+            
+        while k&gt;0:
+            ans.pop()
+            k -= 1
+        
+        while ans[0] == '0':
+            ans.pop(0)
+        
+        return ''.join(ans)
+
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/top-k-frequent-elements/">
+    
+    Top K Frequent Elements</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Heap</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/sort-transformed-array/">
+    
+    Sort Transformed Array</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Math</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/linked-list-cycle-ii/">
+    
+    Linked List Cycle II</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
+
+</div>
+ 
+
+    
+
+</main>
+
+
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Website built by Ting-Hsuan Lin (Vivian)</p>
+
+        </footer>
+
+    </body>
+
+</html>
+

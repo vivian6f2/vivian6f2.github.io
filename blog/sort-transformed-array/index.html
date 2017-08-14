@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <title>Sort Transformed Array</title>
+
+        <style>
+
+    html body {
+        font-family: Raleway, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #75BAFF;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c&#43;&#43;.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/html.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <meta name="generator" content="Hugo 0.26" />
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Sort Transformed Array</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/blog/">Blog</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                                <li><a href="/resume">Resume</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:6f2vivian@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/vivian6f2/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ting-hsuan-lin-829138133/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    
+	
+
+	<h2>Sort Transformed Array</h2>
+    <h6>August 13, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Math</kbd> 
+
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="sort-transformed-array">Sort Transformed Array</h2>
+
+<h6 id="leetcode-360">LeetCode #360</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given a <strong>sorted</strong> array of integers nums and integer values a, b and c. Apply a function of the form f(x) = ax^2 + bx + c to each element x in the array.</p>
+
+<p>The returned array must be in <strong>sorted order</strong>.</p>
+
+<p>Expected time complexity: <strong>O(n)</strong></p>
+
+<p>Example:</p>
+
+<p>nums = [-4, -2, 2, 4], a = 1, b = 3, c = 5,</p>
+
+<p>Result: [3, 9, 15, 33]</p>
+
+<p>nums = [-4, -2, 2, 4], a = -1, b = 3, c = 5</p>
+
+<p>Result: [-23, -5, 1, 7]</p>
+
+<p><br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>It is easy to do it brute force, compute the answer for all numbers and sort the answer array. But it takes O(n log n) time, I need to do it faster.</p>
+
+<p>So then take a look at the function, it is ax^2 + bx + c. The graph of this function may look like:</p>
+
+<ul>
+<li>If a &gt; 0, a curve with minimum point at x = -b/2a.</li>
+<li>If a &lt; 0, a curve with maximum point at x = -b/2a.</li>
+<li>If a = 0, a line and I need to consider if b is larger than 0 or not.</li>
+</ul>
+
+<p>So I think I can solve this problem with two pointers.</p>
+
+<ul>
+<li>If a = 0:
+
+<ul>
+<li>If b &gt;= 0, calculate the answer and return the array directly.</li>
+<li>Else, calculate the answer, and return the reverse array.</li>
+</ul></li>
+<li>If a &gt; 0, use two pointers, left and right:
+
+<ol>
+<li>Compare the answer at left and right, append larger one into array first and move left or right.</li>
+<li>Keep doing it until right is less than left.</li>
+<li>Return reversed array.</li>
+</ol></li>
+<li>If a &lt; 0, also use two pointers, left and right:
+
+<ol>
+<li>Compare the answer at left and right, append smaller one into array and move left or right.</li>
+<li>Keep doing it until right is less than left.</li>
+<li>Return array.</li>
+</ol></li>
+</ul>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code>class Solution(object):
+    def sortTransformedArray(self, nums, a, b, c):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type a: int
+        :type b: int
+        :type c: int
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        def func(x):
+            return a*x*x + b*x + c
+        answer = []
+        
+        if a == 0:
+            if b &gt;= 0:
+                for i in range(0, len(nums)):
+                    answer.append(func(nums[i]))
+                return answer
+            else:
+                for i in range(0, len(nums)):
+                    answer.append(func(nums[i]))
+                return answer[::-1]
+        elif a &gt; 0:
+            left = 0
+            right = len(nums)-1
+            while (left &lt;= right):
+                if func(nums[left]) &gt;= func(nums[right]):
+                    answer.append(func(nums[left]))
+                    left += 1
+                else:
+                    answer.append(func(nums[right]))
+                    right -= 1
+            return answer[::-1]
+        else:
+            left = 0
+            right = len(nums)-1
+            while (left &lt;= right):
+                if func(nums[left]) &lt;= func(nums[right]):
+                    answer.append(func(nums[left]))
+                    left += 1
+                else:
+                    answer.append(func(nums[right]))
+                    right -= 1
+            return answer
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/top-k-frequent-elements/">
+    
+    Top K Frequent Elements</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Heap</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/remove-k-digits/">
+    
+    Remove K Digits</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Greedy</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/linked-list-cycle-ii/">
+    
+    Linked List Cycle II</a></h4>
+
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
+
+</div>
+ 
+
+    
+
+</main>
+
+
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Website built by Ting-Hsuan Lin (Vivian)</p>
+
+        </footer>
+
+    </body>
+
+</html>
+

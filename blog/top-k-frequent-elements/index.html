@@ -123,7 +123,7 @@
 
 	<h2>Top K Frequent Elements</h2>
     <h6>August 13, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Heap</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Heap</kbd> 
 
     <br><br>
     <div class="text-justify">
@@ -179,9 +179,16 @@
 
 <p>After that, just return all the elements in min-heap.</p>
 
+<p><strong>Faster solution</strong>
+1. Run through the whole array and count how many times a number comes up. And store number and count pair in hash table.
+2. Store them into another array again, but use count as index and number as value.
+3. Then just return k numbers from the end of the array.</p>
+
+<p>I try to do it in JavaScript, but there are some problem when two numbers show up same time.</p>
+
 <p><br/></p>
 
-<h4 id="solution">Solution</h4>
+<h4 id="solution-1">Solution 1</h4>
 
 <pre><code>from heapq import heappush, heappop
 
@@ -216,6 +223,33 @@ class Solution(object):
             
         return ans
 </code></pre>
+
+<h4 id="solution-2">Solution 2</h4>
+
+<pre><code>/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var topKFrequent = function(nums, k) {
+    var table = {};
+    for(var i = 0; i &lt; nums.length; i++){
+        if(nums[i] in table){
+            table[nums[i]][1] ++;
+        }
+        else{
+            table[nums[i]] = [nums[i], 1];
+        }
+    }
+    var arr = [];
+    for(var pair in table){
+        arr[table[pair][1]] = table[pair][0];
+    }
+    
+    arr.reverse();
+    return arr.slice(0,k)
+};
+</code></pre>
 </div>
 
     
@@ -236,12 +270,12 @@ class Solution(object):
     
     
 
-    <h4><a href="/blog/copy-list-with-random-pointer/">
+    <h4><a href="/blog/sort-transformed-array/">
     
-    Copy List with Random Pointer</a></h4>
+    Sort Transformed Array</a></h4>
 
     <h5>August 13, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd>  <kbd class="item-tag">Hash Table</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Math</kbd> 
 
 </div>
   <div class="item">
@@ -255,12 +289,12 @@ class Solution(object):
     
     
 
-    <h4><a href="/blog/binary-tree-preorder-traversal/">
+    <h4><a href="/blog/remove-k-digits/">
     
-    Binary Tree Preorder Traversal</a></h4>
+    Remove K Digits</a></h4>
 
     <h5>August 13, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Stack</kbd>  <kbd class="item-tag">Greedy</kbd> 
 
 </div>
   <div class="item">
@@ -274,12 +308,12 @@ class Solution(object):
     
     
 
-    <h4><a href="/blog/binary-tree-postorder-traversal/">
+    <h4><a href="/blog/linked-list-cycle-ii/">
     
-    Binary Tree Postorder Traversal</a></h4>
+    Linked List Cycle II</a></h4>
 
     <h5>August 13, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Tree</kbd>  <kbd class="item-tag">Stack</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Linked List</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
 
 </div>
  

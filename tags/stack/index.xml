@@ -65,6 +65,31 @@ It is always easy to do tree problem recursively. If I want to do it iteratively
     </item>
     
     <item>
+      <title>Closest Binary Search Tree Value II</title>
+      <link>https://vivian6f2.github.io/blog/closest-binary-search-tree-value-ii/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/closest-binary-search-tree-value-ii/</guid>
+      <description>Closest Binary Search Tree Value II LeetCode #272 
+Description Given a non-empty binary search tree and a target value, find k values in the BST that are closest to the target.
+Note:
+ Given target value is a floating point. You may assume k is always valid, that is: k ≤ total nodes. You are guaranteed to have only one unique set of k values in the BST that are closest to the target.</description>
+    </item>
+    
+    <item>
+      <title>Remove K Digits</title>
+      <link>https://vivian6f2.github.io/blog/remove-k-digits/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/remove-k-digits/</guid>
+      <description>Remove K Digits LeetCode #402 
+Description Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.
+Note:
+ The length of num is less than 10002 and will be ≥ k. The given num does not contain any leading zero.  Example 1:
+Input: num = &amp;quot;1432219&amp;quot;, k = 3 Output: &amp;quot;1219&amp;quot; Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.</description>
+    </item>
+    
+    <item>
       <title>Largest Rectangle in Histogram</title>
       <link>https://vivian6f2.github.io/blog/largest-rectangle-in-histogram/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
