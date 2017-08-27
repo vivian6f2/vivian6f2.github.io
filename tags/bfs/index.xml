@@ -6,10 +6,24 @@
     <description>Recent content in Bfs on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Binary Tree Zigzag Level Order Traversal</title>
+      <link>https://vivian6f2.github.io/blog/binary-tree-zigzag-level-order-traversal/</link>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/binary-tree-zigzag-level-order-traversal/</guid>
+      <description>Binary Tree Zigzag Level Order Traversal LeetCode #103 
+Description Given a binary tree, return the zigzag level order traversal of its nodes&amp;rsquo; values. (ie, from left to right, then right to left for the next level and alternate between).
+For example:
+Given binary tree [3,9,20,null,null,15,7],
+ 3 / \ 9 20 / \ 15 7  return its zigzag level order traversal as:
+[ [3], [20,9], [15,7] ]</description>
+    </item>
     
     <item>
       <title>Binary Tree Level Order Traversal</title>

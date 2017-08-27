@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -32,7 +32,7 @@
     <item>
       <title>Array</title>
       <link>https://vivian6f2.github.io/tags/array/</link>
-      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/array/</guid>
       <description></description>
@@ -50,9 +50,18 @@
     <item>
       <title>Bfs</title>
       <link>https://vivian6f2.github.io/tags/bfs/</link>
-      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/bfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Search</title>
+      <link>https://vivian6f2.github.io/tags/binary-search/</link>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/tags/binary-search/</guid>
       <description></description>
     </item>
     
@@ -80,6 +89,15 @@
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/bst/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deque</title>
+      <link>https://vivian6f2.github.io/tags/deque/</link>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/tags/deque/</guid>
       <description></description>
     </item>
     
@@ -230,7 +248,7 @@
     <item>
       <title>Leetcode</title>
       <link>https://vivian6f2.github.io/tags/leetcode/</link>
-      <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/leetcode/</guid>
       <description></description>
@@ -255,9 +273,18 @@
     </item>
     
     <item>
+      <title>Matrix</title>
+      <link>https://vivian6f2.github.io/tags/matrix/</link>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/tags/matrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Medium</title>
       <link>https://vivian6f2.github.io/tags/medium/</link>
-      <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/medium/</guid>
       <description></description>
@@ -347,7 +374,7 @@
     <item>
       <title>Python</title>
       <link>https://vivian6f2.github.io/tags/python/</link>
-      <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/python/</guid>
       <description></description>
@@ -464,7 +491,7 @@
     <item>
       <title>Tree</title>
       <link>https://vivian6f2.github.io/tags/tree/</link>
-      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 26 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/tree/</guid>
       <description></description>

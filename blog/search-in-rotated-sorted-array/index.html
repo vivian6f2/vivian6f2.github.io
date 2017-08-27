@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <title>Search in Rotated Sorted Array</title>
+
+        <style>
+
+    html body {
+        font-family: Raleway, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #75BAFF;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c&#43;&#43;.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/html.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <meta name="generator" content="Hugo 0.26" />
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Search in Rotated Sorted Array</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/blog/">Blog</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                                <li><a href="/resume">Resume</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:6f2vivian@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/vivian6f2/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ting-hsuan-lin-829138133/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    
+	
+
+	<h2>Search in Rotated Sorted Array</h2>
+    <h6>August 26, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Search</kbd>  <kbd class="item-tag">Array</kbd> 
+
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="search-in-rotated-sorted-array">Search in Rotated Sorted Array</h2>
+
+<h6 id="leetcode-33">LeetCode #33</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</p>
+
+<p>(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).</p>
+
+<p>You are given a target value to search. If found in the array return its index, otherwise return -1.</p>
+
+<p>You may assume no duplicate exists in the array.</p>
+
+<p><br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>I think this is a binary search problem. So everytime I can seperate it into two parts with middle index.
+The following are the conditions I have thought about (mid = (low + high)/2):</p>
+
+<ul>
+<li>If nums[mid] == target, return mid</li>
+<li>Else if nums[mid] &lt; target, I cannot make sure which part I have to search now, so there are more conditions:
+
+<ul>
+<li>If nums[mid] &gt; nums[high], it means the rotation happens after mid. So before mid, all the numbers are smaller than target. Go search the array after mid =&gt; low = mid + 1.</li>
+<li>Else if nums[mid] &lt; nums[high], it means that the rotation happens before mid. So I need to check the value of nums[high] to see where target should be.
+
+<ul>
+<li>If nums[high] &lt; target, it means target should appear before mid.</li>
+<li>If nums[high] &gt; target, it means target can only appear after mid.</li>
+</ul></li>
+</ul></li>
+<li>Else if nums[mid] &gt; target, I also cannot make sure which part to search now:
+
+<ul>
+<li>If nums[mid] &gt; nums[high], it means the rotation is after mid. So there may be some numbers smaller than nums[mid] == target before and after mid.
+
+<ul>
+<li>If nums[high] &lt; target, it means target should appear before mid.</li>
+<li>If nums[high] &gt; target, it means target should appear after mid.</li>
+</ul></li>
+<li>If nums[mid] &lt; nums[high], it means the rotation happens before mid. So all the numbers smaller than nums[mid] is before mid =&gt; high = mid.</li>
+</ul></li>
+</ul>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code>class Solution(object):
+    def search(self, nums, target):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        &quot;&quot;&quot;
+        if len(nums)==0: return -1
+        if nums[0]==target: return 0
+        
+        low = 0
+        high = len(nums)-1
+        
+        while (low&lt;high):
+            mid = low + (high-low)/2
+            if(nums[mid]&lt;target):
+                if nums[mid]&lt;nums[high]:
+                    if nums[high]&lt;target:
+                        high = mid
+                    elif nums[high]&gt;target:
+                        low = mid+1
+                    else: return high
+                elif nums[mid]&gt;nums[high]:
+                    if nums[high]==target: return high
+                    else: low = mid+1
+            elif(nums[mid]&gt;target):
+                if nums[mid]&lt;nums[high]:
+                    if nums[high]==target: return high
+                    else: high = mid
+                elif nums[mid]&gt;nums[high]:
+                    if nums[high]&lt;target:
+                        high = mid
+                    elif nums[high]&gt;target:
+                        low = mid+1
+                    else: return high
+            else:
+                return mid
+                
+        return -1
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/spiral-matrix-ii/">
+    
+    Spiral Matrix II</a></h4>
+
+    <h5>August 26, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Matrix</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/spiral-matrix/">
+    
+    Spiral Matrix</a></h4>
+
+    <h5>August 26, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Matrix</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/binary-tree-zigzag-level-order-traversal/">
+    
+    Binary Tree Zigzag Level Order Traversal</a></h4>
+
+    <h5>August 26, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Tree</kbd>  <kbd class="item-tag">BFS</kbd>  <kbd class="item-tag">Deque</kbd> 
+
+</div>
+ 
+
+    
+
+</main>
+
+
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Website built by Ting-Hsuan Lin (Vivian)</p>
+
+        </footer>
+
+    </body>
+
+</html>
+

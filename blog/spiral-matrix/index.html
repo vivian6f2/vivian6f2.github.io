@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <title>Spiral Matrix</title>
+
+        <style>
+
+    html body {
+        font-family: Raleway, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #75BAFF;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c&#43;&#43;.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/html.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <meta name="generator" content="Hugo 0.26" />
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Spiral Matrix</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/blog/">Blog</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                                <li><a href="/resume">Resume</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:6f2vivian@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/vivian6f2/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ting-hsuan-lin-829138133/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    
+	
+
+	<h2>Spiral Matrix</h2>
+    <h6>August 26, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Matrix</kbd> 
+
+    <br><br>
+    <div class="text-justify">
+
+<h2 id="spiral-matrix">Spiral Matrix</h2>
+
+<h6 id="leetcode-54">LeetCode #54</h6>
+
+<p><br/></p>
+
+<h4 id="description">Description</h4>
+
+<p>Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.</p>
+
+<p>For example,</p>
+
+<p>Given the following matrix:</p>
+
+<pre><code>[
+ [ 1, 2, 3 ],
+ [ 4, 5, 6 ],
+ [ 7, 8, 9 ]
+]
+</code></pre>
+
+<p>You should return [1,2,3,6,9,8,7,4,5].</p>
+
+<p><br/></p>
+
+<h4 id="my-thoughts">My Thoughts</h4>
+
+<p>At first, I think about using a pointer to do that. So at first it goes right and until the next point does not exist, it changes its direction. And when the pointer goes through a point, I&rsquo;ll change the value to None. So I&rsquo;ll not go to that point again. However, I have to change the input in this case.</p>
+
+<p>Therefore, I think I have to do it in a different way. I would like to try to solve this problem recursively by breaking this problem into subproblems. For every subproblems, I just have to go through all the points that are at the edge of the matrix. And after I go through all the points, just call the recursive function again with smaller matrix.</p>
+
+<p><br/></p>
+
+<h4 id="solution">Solution</h4>
+
+<pre><code>class Solution(object):
+    def spiralOrder(self, matrix):
+        &quot;&quot;&quot;
+        :type matrix: List[List[int]]
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        if len(matrix)==0: return []
+        if len(matrix[0])==0: return []
+        
+        self.ans = []
+        
+        def recSpiralOrder(matrix, row, col, level):
+            if row &lt;= 0: return
+            if col &lt;= 0: return
+            
+            if col &gt; 1 and row &gt; 1:
+                for i in range(level, col -1 +level):
+                    self.ans.append(matrix[level][i])
+
+                for i in range(level, row -1 +level):
+                    self.ans.append(matrix[i][col -1 +level])
+
+                for i in range(col -1 +level, level, -1):
+                    self.ans.append(matrix[row -1 +level][i])
+
+                for i in range(row -1 +level, level, -1):
+                    self.ans.append(matrix[i][level])
+                
+            elif col == 1 and row == 1:
+                self.ans.append(matrix[level][level])
+                
+            elif col == 1:
+                for i in range(level, row -1 +level):
+                    self.ans.append(matrix[i][col -1 +level])
+                self.ans.append(matrix[row-1+level][level])
+                    
+            elif row == 1:
+                for i in range(level, col -1 +level):
+                    self.ans.append(matrix[level][i])
+                self.ans.append(matrix[level][col -1 +level])
+                
+            return recSpiralOrder(matrix, row-2, col-2, level+1)
+        
+        recSpiralOrder(matrix, len(matrix), len(matrix[0]), 0)
+        return self.ans
+</code></pre>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/spiral-matrix-ii/">
+    
+    Spiral Matrix II</a></h4>
+
+    <h5>August 26, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Matrix</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/search-in-rotated-sorted-array/">
+    
+    Search in Rotated Sorted Array</a></h4>
+
+    <h5>August 26, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Binary Search</kbd>  <kbd class="item-tag">Array</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/binary-tree-zigzag-level-order-traversal/">
+    
+    Binary Tree Zigzag Level Order Traversal</a></h4>
+
+    <h5>August 26, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Tree</kbd>  <kbd class="item-tag">BFS</kbd>  <kbd class="item-tag">Deque</kbd> 
+
+</div>
+ 
+
+    
+
+</main>
+
+
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Website built by Ting-Hsuan Lin (Vivian)</p>
+
+        </footer>
+
+    </body>
+
+</html>
+
