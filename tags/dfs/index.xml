@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dfs on Ting-Hsuan Lin</title>
+    <link>https://vivian6f2.github.io/tags/dfs/</link>
+    <description>Recent content in Dfs on Ting-Hsuan Lin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vivian6f2.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Path Sum</title>
+      <link>https://vivian6f2.github.io/blog/path-sum/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/path-sum/</guid>
+      <description>Path Sum LeetCode #112 
+Description Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
+For example:
+Given the below binary tree and sum = 22,
+ 5 / \ 4 8 / / \ 11 13 4 / \ \ 7 2 1  return true, as there exist a root-to-leaf path 5-&amp;gt;4-&amp;gt;11-&amp;gt;2 which sum is 22.</description>
+    </item>
+    
+    <item>
+      <title>Path Sum II</title>
+      <link>https://vivian6f2.github.io/blog/path-sum-ii/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/path-sum-ii/</guid>
+      <description>Path Sum II LeetCode #113 
+Description Given a binary tree and a sum, find all root-to-leaf paths where each path&amp;rsquo;s sum equals the given sum.
+For example:
+Given the below binary tree and sum = 22,
+ 5 / \ 4 8 / / \ 11 13 4 / \ / \ 7 2 5 1  return
+[ [5,4,11,2], [5,8,4,5] ]  
+My Thoughts It is similar to Path Sum problem.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,7 @@
     <description>Recent content on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -72,6 +72,69 @@
       
       <guid>https://vivian6f2.github.io/project/face-recognition-roll-call-system/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>INF 554 Assignment 1</title>
+      <link>https://vivian6f2.github.io/blog/inf-554-assignment-1/</link>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/inf-554-assignment-1/</guid>
+      <description>Notes for INF 554 Assignment 1 Useful Data Source
+It is easy to publish chart on Google Sheet with following steps: 1 In the top right of chart, click More. 2 Click Publish chart. 3 Choose a publishing option: * Link: Copy and share the link. * Embed: Copy and paste the HTML code into your website or blog. 4 Select the sheet with the chart and click Publish.</description>
+    </item>
+    
+    <item>
+      <title>Path Sum</title>
+      <link>https://vivian6f2.github.io/blog/path-sum/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/path-sum/</guid>
+      <description>Path Sum LeetCode #112 
+Description Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
+For example:
+Given the below binary tree and sum = 22,
+ 5 / \ 4 8 / / \ 11 13 4 / \ \ 7 2 1  return true, as there exist a root-to-leaf path 5-&amp;gt;4-&amp;gt;11-&amp;gt;2 which sum is 22.</description>
+    </item>
+    
+    <item>
+      <title>Path Sum II</title>
+      <link>https://vivian6f2.github.io/blog/path-sum-ii/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/path-sum-ii/</guid>
+      <description>Path Sum II LeetCode #113 
+Description Given a binary tree and a sum, find all root-to-leaf paths where each path&amp;rsquo;s sum equals the given sum.
+For example:
+Given the below binary tree and sum = 22,
+ 5 / \ 4 8 / / \ 11 13 4 / \ / \ 7 2 5 1  return
+[ [5,4,11,2], [5,8,4,5] ]  
+My Thoughts It is similar to Path Sum problem.</description>
+    </item>
+    
+    <item>
+      <title>Path Sum III</title>
+      <link>https://vivian6f2.github.io/blog/path-sum-iii/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/path-sum-iii/</guid>
+      <description>Path Sum III LeetCode #437 
+Description You are given a binary tree in which each node contains an integer value.
+Find the number of paths that sum to a given value.
+The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).
+The tree has no more than 1,000 nodes and the values are in the range -1,000,000 to 1,000,000.</description>
+    </item>
+    
+    <item>
+      <title>Path Sum IV</title>
+      <link>https://vivian6f2.github.io/blog/path-sum-iv/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/path-sum-iv/</guid>
+      <description>Path Sum IV LeetCode #666 
+Description If the depth of a tree is smaller than 5, then this tree can be represented by a list of three-digits integers.
+For each integer in this list:
+1 The hundreds digit represents the depth D of this node, 1 &amp;lt;= D &amp;lt;= 4. 2 The tens digit represents the position P of this node in the level it belongs to, 1 &amp;lt;= P &amp;lt;= 8.</description>
     </item>
     
     <item>
