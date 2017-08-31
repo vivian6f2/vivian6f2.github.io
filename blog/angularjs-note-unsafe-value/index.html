@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Collaborative Online Judge System</title>
+        <title>AngularJS Note - Unsafe Value</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Collaborative Online Judge System</a>
+                    <a class="navbar-brand visible-xs" href="#">AngularJS Note - Unsafe Value</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,12 +121,41 @@
     
 	
 
-	<h2>Collaborative Online Judge System</h2>
-    
-     <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Angular2</kbd>  <kbd class="item-tag">Node.js</kbd>  <kbd class="item-tag">Express</kbd>  <kbd class="item-tag">Redia</kbd>  <kbd class="item-tag">MongoDB</kbd>  <kbd class="item-tag">Docker</kbd>  <kbd class="item-tag">RESTful API</kbd>  <kbd class="item-tag">Nginx</kbd>  <kbd class="item-tag">USC</kbd> 
+	<h2>AngularJS Note - Unsafe Value</h2>
+    <h6>August 30, 2017</h6>
+     <kbd class="item-tag">AngularJS</kbd>  <kbd class="item-tag">Notes</kbd>  <kbd class="item-tag">JavaScript</kbd> 
 
     <br><br>
-    <div class="text-justify"></div>
+    <div class="text-justify">
+
+<h2 id="notes-for-angularjs">Notes for AngularJS</h2>
+
+<h3 id="error-unsafe-value-used-in-a-resource-url-context">Error: unsafe value used in a resource URL context</h3>
+
+<p>I met this error when I tried to set iframe src attribute. And after searching this error message, I got this <a href="https://stackoverflow.com/questions/38037760/how-to-set-iframe-src-in-angular-2-without-causing-unsafe-value-exception">answer</a>.</p>
+
+<p>So let me just simplify this answer into my own word. In the component that I want to set the url for iframe src:</p>
+
+<ol>
+<li><p>Import SafeResourceUrl and DomSanitizer</p>
+
+<pre><code>import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+</code></pre></li>
+
+<li><p>Add DomSanitizer into contructor</p>
+
+<pre><code>constructor(private sanitizer: DomSanitizer) {
+}
+</code></pre></li>
+
+<li><p>Use SafeResourceUrl for the variable which if for iframe src</p>
+
+<pre><code>this.safeUrl = sanitizer.bypassSecurityTrustResourceUrl('myIframeSrc');
+</code></pre></li>
+</ol>
+
+<p>After doing above steps, there may not be any other error for unsafe value.</p>
+</div>
 
     
     
@@ -146,12 +175,12 @@
     
     
 
-    <h4><a href="/blog/angularjs-note-unsafe-value/">
+    <h4><a href="/blog/inf-554-assignment-1/">
     
-    AngularJS Note - Unsafe Value</a></h4>
+    INF 554 Assignment 1</a></h4>
 
-    <h5>August 30, 2017</h5>
-     <kbd class="item-tag">AngularJS</kbd>  <kbd class="item-tag">Notes</kbd>  <kbd class="item-tag">JavaScript</kbd> 
+    <h5>August 28, 2017</h5>
+     <kbd class="item-tag">Notes</kbd>  <kbd class="item-tag">Homework</kbd>  <kbd class="item-tag">INF554</kbd> 
 
 </div>
   <div class="item">
@@ -165,12 +194,12 @@
     
     
 
-    <h4><a href="/blog/path-sum-iv/">
+    <h4><a href="/blog/top-k-frequent-elements/">
     
-    Path Sum IV</a></h4>
+    Top K Frequent Elements</a></h4>
 
-    <h5>August 27, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Tree</kbd> 
+    <h5>August 13, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Heap</kbd> 
 
 </div>
   <div class="item">
@@ -184,12 +213,12 @@
     
     
 
-    <h4><a href="/blog/path-sum-ii/">
+    <h4><a href="/blog/longest-substring-without-repeating-characters/">
     
-    Path Sum II</a></h4>
+    Longest Substring Without Repeating Characters</a></h4>
 
-    <h5>August 27, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Tree</kbd>  <kbd class="item-tag">DFS</kbd> 
+    <h5>August 8, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Hash</kbd>  <kbd class="item-tag">Queue</kbd>  <kbd class="item-tag">JavaScript</kbd> 
 
 </div>
  

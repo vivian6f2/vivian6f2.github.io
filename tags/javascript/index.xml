@@ -6,7 +6,7 @@
     <description>Recent content in Javascript on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
@@ -54,6 +54,18 @@
       
       <guid>https://vivian6f2.github.io/ec2-34-223-214-115.us-west-2.compute.amazonaws.com3000</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>AngularJS Note - Unsafe Value</title>
+      <link>https://vivian6f2.github.io/blog/angularjs-note-unsafe-value/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/angularjs-note-unsafe-value/</guid>
+      <description>Notes for AngularJS Error: unsafe value used in a resource URL context I met this error when I tried to set iframe src attribute. And after searching this error message, I got this answer.
+So let me just simplify this answer into my own word. In the component that I want to set the url for iframe src:
+ Import SafeResourceUrl and DomSanitizer
+import { SafeResourceUrl, DomSanitizer } from &#39;@angular/platform-browser&#39;;  Add DomSanitizer into contructor</description>
     </item>
     
     <item>
