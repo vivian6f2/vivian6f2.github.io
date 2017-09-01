@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ec2 on Ting-Hsuan Lin</title>
+    <link>https://vivian6f2.github.io/tags/ec2/</link>
+    <description>Recent content in Ec2 on Ting-Hsuan Lin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vivian6f2.github.io/tags/ec2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Broken Pipe on SSH Connection</title>
+      <link>https://vivian6f2.github.io/blog/aws-broken-pipe-on-ssh-connection/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/aws-broken-pipe-on-ssh-connection/</guid>
+      <description>Notes for AWS EC2 Setting Write Failed: Broken Pipe When I tried to use screen command to link to AWS EC2, it broken easily and my website stopped. And the following error message showed up:
+Write Failed: broken pipe  So I found this solution, and tried both client and server configuration.
+For client configuration:
+ Try creating the file:
+~/.ssh/config  Add the contents:
+Host * ServerAliveInterval 30 ServerAliveCountMax 5   For server configuration:</description>
+    </item>
+    
+  </channel>
+</rss>

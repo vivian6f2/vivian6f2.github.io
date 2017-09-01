@@ -6,10 +6,19 @@
     <description>Recent content on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chrome Start Page</title>
+      <link>https://vivian6f2.github.io/chrome.google.com/webstore/detail/chrome-start-page/cacnefkpccebkfppmhjohfabiejkdpjk</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/chrome.google.com/webstore/detail/chrome-start-page/cacnefkpccebkfppmhjohfabiejkdpjk</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tap News</title>
@@ -72,6 +81,43 @@
       
       <guid>https://vivian6f2.github.io/project/face-recognition-roll-call-system/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>AWS Broken Pipe on SSH Connection</title>
+      <link>https://vivian6f2.github.io/blog/aws-broken-pipe-on-ssh-connection/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/aws-broken-pipe-on-ssh-connection/</guid>
+      <description>Notes for AWS EC2 Setting Write Failed: Broken Pipe When I tried to use screen command to link to AWS EC2, it broken easily and my website stopped. And the following error message showed up:
+Write Failed: broken pipe  So I found this solution, and tried both client and server configuration.
+For client configuration:
+ Try creating the file:
+~/.ssh/config  Add the contents:
+Host * ServerAliveInterval 30 ServerAliveCountMax 5   For server configuration:</description>
+    </item>
+    
+    <item>
+      <title>AngularJS Note - File Saver</title>
+      <link>https://vivian6f2.github.io/blog/angularjs-note-file-saver/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/angularjs-note-file-saver/</guid>
+      <description>Notes for AngularJS How to let user save file I&amp;rsquo;m trying to let user export custom settings into a text file. So I found this solution which use file-saver package.
+And it worked for me with the following steps:
+ Install file-saver and its type.
+npm install file-saver --save npm install @types/file-saver --save  Import file-saver in the component.
+import * as FileSaver from &#39;file-saver&#39;;  Then I can easily save file with the following code which will save a file named export.</description>
+    </item>
+    
+    <item>
+      <title>AngularJS Note - Subscribe</title>
+      <link>https://vivian6f2.github.io/blog/angularjs-note-subscribe/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/angularjs-note-subscribe/</guid>
+      <description>Notes for AngularJS How to update component when service data changed I have a service called data in my project, and I want to update one component when some data changed in service. However, the only way to get data in service is to get it inside constructor.
+constructor(@Inject(&#39;data&#39;) private data) { this.showVideo = this.data.showVideo; this.videoId = this.data.videoId; }  So I need to use subscribe(()=&amp;gt;{}) to notice my component that the data is updated.</description>
     </item>
     
     <item>

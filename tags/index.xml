@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,7 +23,7 @@
     <item>
       <title>Angularjs</title>
       <link>https://vivian6f2.github.io/tags/angularjs/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/angularjs/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>Aws</title>
       <link>https://vivian6f2.github.io/tags/aws/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/aws/</guid>
       <description></description>
@@ -129,6 +129,15 @@
     </item>
     
     <item>
+      <title>Ec2</title>
+      <link>https://vivian6f2.github.io/tags/ec2/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Elasticsearch</title>
       <link>https://vivian6f2.github.io/tags/elasticsearch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -152,6 +161,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Chrome Api</title>
+      <link>https://vivian6f2.github.io/tags/google-chrome-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/tags/google-chrome-api/</guid>
       <description></description>
     </item>
     
@@ -257,7 +275,7 @@
     <item>
       <title>Javascript</title>
       <link>https://vivian6f2.github.io/tags/javascript/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/javascript/</guid>
       <description></description>
@@ -383,7 +401,7 @@
     <item>
       <title>Notes</title>
       <link>https://vivian6f2.github.io/tags/notes/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/notes/</guid>
       <description></description>
@@ -471,11 +489,29 @@
     </item>
     
     <item>
+      <title>Semantic Ui</title>
+      <link>https://vivian6f2.github.io/tags/semantic-ui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/tags/semantic-ui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Socket.io</title>
       <link>https://vivian6f2.github.io/tags/socket.io/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vivian6f2.github.io/tags/socket.io/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>https://vivian6f2.github.io/tags/ssh/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     
