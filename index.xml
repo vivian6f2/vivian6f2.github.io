@@ -6,7 +6,7 @@
     <description>Recent content on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -81,6 +81,28 @@
       
       <guid>https://vivian6f2.github.io/project/face-recognition-roll-call-system/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Get Absolute Position of Cursor</title>
+      <link>https://vivian6f2.github.io/blog/get-absolute-position-of-cursor/</link>
+      <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/get-absolute-position-of-cursor/</guid>
+      <description> Notes for getting absolute position of cursor When I want to get position of cursor, I have to consider about scrolling.
+The following code is a simple function which returns the absolute position of cursor.
+function getCursorXY(e) { var left = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft); var top = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop); return {&#39;left&#39;:left, &#39;top&#39;:top}; }  </description>
+    </item>
+    
+    <item>
+      <title>INF 554 Assignment 2</title>
+      <link>https://vivian6f2.github.io/blog/inf-554-assignment-2/</link>
+      <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/inf-554-assignment-2/</guid>
+      <description>Notes for INF 554 Assignment 2 Useful Data Source
+It is easy to show SVG (Scalable Vector Graphics) image through image tag or just write svg directly into HTML file in XML format. However, when I was trying to create SVG tag dynamically using JavaScript, it was not working with createElement(). And I found the reason and solution.
+Because SVG is not HTML tag but XML tag, I cannot use createElement function.</description>
     </item>
     
     <item>

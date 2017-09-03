@@ -6,10 +6,21 @@
     <description>Recent content in Homework on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/homework/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>INF 554 Assignment 2</title>
+      <link>https://vivian6f2.github.io/blog/inf-554-assignment-2/</link>
+      <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/inf-554-assignment-2/</guid>
+      <description>Notes for INF 554 Assignment 2 Useful Data Source
+It is easy to show SVG (Scalable Vector Graphics) image through image tag or just write svg directly into HTML file in XML format. However, when I was trying to create SVG tag dynamically using JavaScript, it was not working with createElement(). And I found the reason and solution.
+Because SVG is not HTML tag but XML tag, I cannot use createElement function.</description>
+    </item>
     
     <item>
       <title>INF 554 Assignment 1</title>
