@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Convert Sorted Array to Binary Search Tree</title>
+        <title>Island Perimeter</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Convert Sorted Array to Binary Search Tree</a>
+                    <a class="navbar-brand visible-xs" href="#">Island Perimeter</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,70 +121,144 @@
     
 	
 
-	<h2>Convert Sorted Array to Binary Search Tree</h2>
-    <h6>August 9, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">BST</kbd>  <kbd class="item-tag">Recursion</kbd>  <kbd class="item-tag">Binary Tree</kbd> 
+	<h2>Island Perimeter</h2>
+    <h6>September 4, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Stack</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="convert-sorted-array-to-binary-search-tree">Convert Sorted Array to Binary Search Tree</h2>
+<h2 id="island-perimeter">Island Perimeter</h2>
 
-<h6 id="leetcode-108">LeetCode #108</h6>
+<h6 id="leetcode-463">LeetCode #463</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
-<br/></p>
+<p>You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells). The island doesn&rsquo;t have &ldquo;lakes&rdquo; (water inside that isn&rsquo;t connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don&rsquo;t exceed 100. Determine the perimeter of the island.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code>[[0,1,0,0],
+ [1,1,1,0],
+ [0,1,0,0],
+ [1,1,0,0]]
+
+Answer: 16
+</code></pre>
+
+<p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>I like to do tree problem recursively if I can. And for this problem, I know I can do it recursively by dividing a big problem into two small problems until I can solve the question.</p>
+<p>It is easy to do it directly with two nested for loop. Just like solution 1.</p>
 
-<p>Because I have to convert array to a <strong>height balanced</strong> BST, I think that I have to divide the array in the middle everytime. And call the recursive function two times for left array and right array. And also handle boundary case at the beginning of my recursive function.</p>
+<p>However, it will go through some unnecessary cells. So I want to solve this problem with stack and only go to the necessary parts. See solution 2.</p>
 
-<p>So my recursive function will look like:</p>
+<p>So I will use a nested for loop to find the first land first, and push this position into stack.</p>
 
-<pre><code>def recursiveFunction(nums):
-    # Boundary condition
-    if nothing in nums: 
-        return None
+<p>Then while the stack is not empty, do the following steps:</p>
 
-    # General condition
-    mid = middle index of nums
-    TreeNode.val = nums[mid]
-    TreeNode.left = recursiveFunction(left array)
-    TreeNode.right = recursiveFunction(right array)
-    return TreeNode
-</code></pre>
+<ol>
+<li>Pop the first element from stack.</li>
+<li>Change that value into 2.</li>
+<li>Check it&rsquo;s top, left, right and down and add the perimeter if needed.</li>
+<li>Push the position into stack if that position is also a land.</li>
+</ol>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
-<pre><code># Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+<h5 id="solution-1">Solution 1</h5>
 
-class Solution(object):
-    def sortedArrayToBST(self, nums):
+<pre><code>class Solution(object):
+    def islandPerimeter(self, grid):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :rtype: TreeNode
+        :type grid: List[List[int]]
+        :rtype: int
         &quot;&quot;&quot;
-        if len(nums)==0: return None
+        perimeter=0
+        for i in range(len(grid)):
+            for j in range(len(grid[i])):
+                if grid[i][j]==1:
+                    #up
+                    if i==0:
+                        perimeter = perimeter+1
+                    else:
+                      if grid[i-1][j]==0:
+                          perimeter = perimeter+1
+                    #left
+                    if j==0:
+                        perimeter = perimeter+1
+                    else:
+                      if grid[i][j-1]==0:
+                          perimeter = perimeter+1
+                    #right
+                    if j==(len(grid[i])-1):
+                        perimeter = perimeter+1
+                    else:
+                      if grid[i][j+1]==0:
+                          perimeter = perimeter+1
+                    #down
+                    if i==(len(grid)-1):
+                        perimeter = perimeter+1
+                    else:
+                      if grid[i+1][j]==0:
+                          perimeter = perimeter+1
+        return perimeter
+</code></pre>
+
+<h5 id="solution-2">Solution 2</h5>
+
+<pre><code>class Solution(object):
+    def islandPerimeter(self, grid):
+        &quot;&quot;&quot;
+        :type grid: List[List[int]]
+        :rtype: int
+        &quot;&quot;&quot;
+        perimeter=0
+        stack = []
         
-        mid =(len(nums)-1)/2
-        BST = TreeNode(0)
-        BST.val = nums[mid]
-        BST.left = self.sortedArrayToBST(nums[0:mid])
-        BST.right = self.sortedArrayToBST(nums[mid+1:len(nums)])
-        return BST
+        def findFirstLand():
+            for i in range(0, len(grid)):
+                for j in range(0, len(grid[i])):
+                    if grid[i][j]==1:
+                        stack.append((i,j))
+                        grid[i][j] = 2
+                        return
+        findFirstLand()
+        
+        while len(stack) &gt; 0:
+            x, y = stack.pop()
+            # top
+            if x == 0 or grid[x-1][y] == 0:
+                perimeter += 1
+            elif grid[x-1][y] == 1:
+                stack.append((x-1,y))
+                grid[x-1][y] = 2
+            # left
+            if y == 0 or grid[x][y-1] == 0:
+                perimeter += 1
+            elif grid[x][y-1] == 1:
+                stack.append((x,y-1))
+                grid[x][y-1] = 2
+            # right
+            if x == (len(grid)-1) or grid[x+1][y] == 0:
+                perimeter += 1
+            elif grid[x+1][y] == 1:
+                stack.append((x+1,y))
+                grid[x+1][y] = 2
+            # down
+            if y == (len(grid[x])-1) or grid[x][y+1] == 0:
+                perimeter += 1
+            elif grid[x][y+1] == 1:
+                stack.append((x,y+1))
+                grid[x][y+1] = 2
+            
+            
+        return perimeter
 </code></pre>
 </div>
 
@@ -196,25 +270,6 @@ class Solution(object):
         <h4 class="page-header">Related</h4>
 
          <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/island-perimeter/">
-    
-    Island Perimeter</a></h4>
-
-    <h5>September 4, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Stack</kbd> 
-
-</div>
-  <div class="item">
 
 	
 
@@ -250,6 +305,25 @@ class Solution(object):
 
     <h5>August 27, 2017</h5>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Tree</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/path-sum-ii/">
+    
+    Path Sum II</a></h4>
+
+    <h5>August 27, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Tree</kbd>  <kbd class="item-tag">DFS</kbd> 
 
 </div>
  
