@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Sort Transformed Array</title>
+        <title>Valid Word Abbreviation</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Sort Transformed Array</a>
+                    <a class="navbar-brand visible-xs" href="#">Valid Word Abbreviation</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,74 +121,58 @@
     
 	
 
-	<h2>Sort Transformed Array</h2>
-    <h6>August 13, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Math</kbd> 
+	<h2>Valid Word Abbreviation</h2>
+    <h6>September 11, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="sort-transformed-array">Sort Transformed Array</h2>
+<h2 id="valid-word-abbreviation">Valid Word Abbreviation</h2>
 
-<h6 id="leetcode-360">LeetCode #360</h6>
+<h6 id="leetcode-408">LeetCode #408</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given a <strong>sorted</strong> array of integers nums and integer values a, b and c. Apply a function of the form f(x) = ax^2 + bx + c to each element x in the array.</p>
+<p>Given a non-empty string s and an abbreviation abbr, return whether the string matches with the given abbreviation.</p>
 
-<p>The returned array must be in <strong>sorted order</strong>.</p>
+<p>A string such as &ldquo;word&rdquo; contains only the following valid abbreviations:</p>
 
-<p>Expected time complexity: <strong>O(n)</strong></p>
+<pre><code>[&quot;word&quot;, &quot;1ord&quot;, &quot;w1rd&quot;, &quot;wo1d&quot;, &quot;wor1&quot;, &quot;2rd&quot;, &quot;w2d&quot;, &quot;wo2&quot;, &quot;1o1d&quot;, &quot;1or1&quot;, &quot;w1r1&quot;, &quot;1o2&quot;, &quot;2r1&quot;, &quot;3d&quot;, &quot;w3&quot;, &quot;4&quot;]
+</code></pre>
 
-<p>Example:</p>
+<p>Notice that only the above abbreviations are valid abbreviations of the string &ldquo;word&rdquo;. Any other string is not a valid abbreviation of &ldquo;word&rdquo;.</p>
 
-<p>nums = [-4, -2, 2, 4], a = 1, b = 3, c = 5,</p>
+<p><strong>Note:</strong></p>
 
-<p>Result: [3, 9, 15, 33]</p>
+<p>Assume s contains only lowercase letters and abbr contains only lowercase letters and digits.</p>
 
-<p>nums = [-4, -2, 2, 4], a = -1, b = 3, c = 5</p>
+<p><strong>Example 1:</strong></p>
 
-<p>Result: [-23, -5, 1, 7]</p>
+<pre><code>Given s = &quot;internationalization&quot;, abbr = &quot;i12iz4n&quot;:
+
+Return true.
+</code></pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code>Given s = &quot;apple&quot;, abbr = &quot;a2e&quot;:
+
+Return false.
+</code></pre>
 
 <p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>It is easy to do it brute force, compute the answer for all numbers and sort the answer array. But it takes O(n log n) time, I need to do it faster.</p>
-
-<p>So then take a look at the function, it is ax^2 + bx + c. The graph of this function may look like:</p>
+<p>I think it can be solved with two pointers. Both of the pointers start from the beginning of two strings. And do the following things:</p>
 
 <ul>
-<li>If a &gt; 0, a curve with minimum point at x = -b/2a.</li>
-<li>If a &lt; 0, a curve with maximum point at x = -b/2a.</li>
-<li>If a = 0, a line and I need to consider if b is larger than 0 or not.</li>
-</ul>
-
-<p>So I think I can solve this problem with two pointers.</p>
-
-<ul>
-<li>If a = 0:
-
-<ul>
-<li>If b &gt;= 0, calculate the answer and return the array directly.</li>
-<li>Else, calculate the answer, and return the reverse array.</li>
-</ul></li>
-<li>If a &gt; 0, use two pointers, left and right:
-
-<ol>
-<li>Compare the answer at left and right, append larger one into array first and move left or right.</li>
-<li>Keep doing it until right is less than left.</li>
-<li>Return reversed array.</li>
-</ol></li>
-<li>If a &lt; 0, also use two pointers, left and right:
-
-<ol>
-<li>Compare the answer at left and right, append smaller one into array and move left or right.</li>
-<li>Keep doing it until right is less than left.</li>
-<li>Return array.</li>
-</ol></li>
+<li>If both of them point to letter, check if they are the same.</li>
+<li>Else, go through the numbers and let non abbreviate one jump.</li>
+<li>Return true at the end of the function.</li>
 </ul>
 
 <p><br/></p>
@@ -196,49 +180,30 @@
 <h4 id="solution">Solution</h4>
 
 <pre><code>class Solution(object):
-    def sortTransformedArray(self, nums, a, b, c):
+    def validWordAbbreviation(self, word, abbr):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :type a: int
-        :type b: int
-        :type c: int
-        :rtype: List[int]
+        :type word: str
+        :type abbr: str
+        :rtype: bool
         &quot;&quot;&quot;
-        def func(x):
-            return a*x*x + b*x + c
-        answer = []
+        p = 0
+        q = 0
         
-        if a == 0:
-            if b &gt;= 0:
-                for i in range(0, len(nums)):
-                    answer.append(func(nums[i]))
-                return answer
+        while p &lt; len(word) and q &lt; len(abbr):
+            if abbr[q].isdigit():
+                value = 0
+                if int(abbr[q]) == 0: return False
+                while q &lt; len(abbr) and abbr[q].isdigit():
+                    value = value * 10 + int(abbr[q])
+                    q += 1
+                p += value
+            elif word[p] == abbr[q]:
+                p += 1
+                q += 1
             else:
-                for i in range(0, len(nums)):
-                    answer.append(func(nums[i]))
-                return answer[::-1]
-        elif a &gt; 0:
-            left = 0
-            right = len(nums)-1
-            while (left &lt;= right):
-                if func(nums[left]) &gt;= func(nums[right]):
-                    answer.append(func(nums[left]))
-                    left += 1
-                else:
-                    answer.append(func(nums[right]))
-                    right -= 1
-            return answer[::-1]
-        else:
-            left = 0
-            right = len(nums)-1
-            while (left &lt;= right):
-                if func(nums[left]) &lt;= func(nums[right]):
-                    answer.append(func(nums[left]))
-                    left += 1
-                else:
-                    answer.append(func(nums[right]))
-                    right -= 1
-            return answer
+                return False
+        
+        return p == len(word) and q == len(abbr)
 </code></pre>
 </div>
 
@@ -279,12 +244,12 @@
     
     
 
-    <h4><a href="/blog/valid-word-abbreviation/">
+    <h4><a href="/blog/isomorphic-strings/">
     
-    Valid Word Abbreviation</a></h4>
+    Isomorphic Strings</a></h4>
 
     <h5>September 11, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Hash Table</kbd> 
 
 </div>
   <div class="item">
@@ -298,12 +263,12 @@
     
     
 
-    <h4><a href="/blog/isomorphic-strings/">
+    <h4><a href="/blog/decode-ways/">
     
-    Isomorphic Strings</a></h4>
+    Decode Ways</a></h4>
 
     <h5>September 11, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Hash Table</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
 
 </div>
  

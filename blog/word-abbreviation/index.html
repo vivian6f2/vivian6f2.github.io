@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Sort Transformed Array</title>
+        <title>Word Abbreviation</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Sort Transformed Array</a>
+                    <a class="navbar-brand visible-xs" href="#">Word Abbreviation</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,124 +121,92 @@
     
 	
 
-	<h2>Sort Transformed Array</h2>
-    <h6>August 13, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Math</kbd> 
+	<h2>Word Abbreviation</h2>
+    <h6>September 11, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Hash Table</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="sort-transformed-array">Sort Transformed Array</h2>
+<h2 id="word-abbreviation">Word Abbreviation</h2>
 
-<h6 id="leetcode-360">LeetCode #360</h6>
+<h6 id="leetcode-527">LeetCode #527</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given a <strong>sorted</strong> array of integers nums and integer values a, b and c. Apply a function of the form f(x) = ax^2 + bx + c to each element x in the array.</p>
+<p>Given an array of n distinct non-empty strings, you need to generate minimal possible abbreviations for every word following rules below.</p>
 
-<p>The returned array must be in <strong>sorted order</strong>.</p>
+<ol>
+<li>Begin with the first character and then the number of characters abbreviated, which followed by the last character.</li>
+<li>If there are any conflict, that is more than one words share the same abbreviation, a longer prefix is used instead of only the first character until making the map from word to abbreviation become unique. In other words, a final abbreviation cannot map to more than one original words.</li>
+<li>If the abbreviation doesn&rsquo;t make the word shorter, then keep it as original.</li>
+</ol>
 
-<p>Expected time complexity: <strong>O(n)</strong></p>
+<p><strong>Example:</strong></p>
 
-<p>Example:</p>
+<pre><code>Input: [&quot;like&quot;, &quot;god&quot;, &quot;internal&quot;, &quot;me&quot;, &quot;internet&quot;, &quot;interval&quot;, &quot;intension&quot;, &quot;face&quot;, &quot;intrusion&quot;]
+Output: [&quot;l2e&quot;,&quot;god&quot;,&quot;internal&quot;,&quot;me&quot;,&quot;i6t&quot;,&quot;interval&quot;,&quot;inte4n&quot;,&quot;f2e&quot;,&quot;intr4n&quot;]
+</code></pre>
 
-<p>nums = [-4, -2, 2, 4], a = 1, b = 3, c = 5,</p>
+<p><strong>Note:</strong></p>
 
-<p>Result: [3, 9, 15, 33]</p>
-
-<p>nums = [-4, -2, 2, 4], a = -1, b = 3, c = 5</p>
-
-<p>Result: [-23, -5, 1, 7]</p>
+<ol>
+<li>Both n and the length of each word will not exceed 400.</li>
+<li>The length of each word is greater than 1.</li>
+<li>The words consist of lowercase English letters only.</li>
+<li>The return answers should be in the same order as the original array.</li>
+</ol>
 
 <p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>It is easy to do it brute force, compute the answer for all numbers and sort the answer array. But it takes O(n log n) time, I need to do it faster.</p>
-
-<p>So then take a look at the function, it is ax^2 + bx + c. The graph of this function may look like:</p>
-
-<ul>
-<li>If a &gt; 0, a curve with minimum point at x = -b/2a.</li>
-<li>If a &lt; 0, a curve with maximum point at x = -b/2a.</li>
-<li>If a = 0, a line and I need to consider if b is larger than 0 or not.</li>
-</ul>
-
-<p>So I think I can solve this problem with two pointers.</p>
-
-<ul>
-<li>If a = 0:
-
-<ul>
-<li>If b &gt;= 0, calculate the answer and return the array directly.</li>
-<li>Else, calculate the answer, and return the reverse array.</li>
-</ul></li>
-<li>If a &gt; 0, use two pointers, left and right:
-
-<ol>
-<li>Compare the answer at left and right, append larger one into array first and move left or right.</li>
-<li>Keep doing it until right is less than left.</li>
-<li>Return reversed array.</li>
-</ol></li>
-<li>If a &lt; 0, also use two pointers, left and right:
-
-<ol>
-<li>Compare the answer at left and right, append smaller one into array and move left or right.</li>
-<li>Keep doing it until right is less than left.</li>
-<li>Return array.</li>
-</ol></li>
-</ul>
-
-<p><br/></p>
+<p>I will first abbreviate all the words into first-number-last, and if any of them are equal, add the number to show in the beginning. And keep doing this until none of them are equal.
+<br/></p>
 
 <h4 id="solution">Solution</h4>
 
 <pre><code>class Solution(object):
-    def sortTransformedArray(self, nums, a, b, c):
+    def wordsAbbreviation(self, dict):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :type a: int
-        :type b: int
-        :type c: int
-        :rtype: List[int]
+        :type dict: List[str]
+        :rtype: List[str]
         &quot;&quot;&quot;
-        def func(x):
-            return a*x*x + b*x + c
-        answer = []
+        def createAbbreviation(prefix, s):
+            if (len(s)-prefix-1) &lt;= 1: return s
+            t = &quot;&quot;
+            for j in range(0, prefix):
+                t += s[j]
+            t += str((len(s)-prefix-1))
+            t += s[-1]
+            return t
         
-        if a == 0:
-            if b &gt;= 0:
-                for i in range(0, len(nums)):
-                    answer.append(func(nums[i]))
-                return answer
-            else:
-                for i in range(0, len(nums)):
-                    answer.append(func(nums[i]))
-                return answer[::-1]
-        elif a &gt; 0:
-            left = 0
-            right = len(nums)-1
-            while (left &lt;= right):
-                if func(nums[left]) &gt;= func(nums[right]):
-                    answer.append(func(nums[left]))
-                    left += 1
+        prefix = {}
+        abbr = {}
+        ans = []
+        keepDoing = True
+        while(keepDoing):
+            keepDoing = False
+            abbr = {}
+            ans = []
+            for i in range(0, len(dict)):
+                if dict[i] not in prefix:
+                    prefix[dict[i]] = 1
+                abbrS = createAbbreviation(prefix[dict[i]], dict[i])
+                ans.append(str(abbrS))
+                if abbrS not in abbr:
+                    abbr[abbrS] = [dict[i]]
                 else:
-                    answer.append(func(nums[right]))
-                    right -= 1
-            return answer[::-1]
-        else:
-            left = 0
-            right = len(nums)-1
-            while (left &lt;= right):
-                if func(nums[left]) &lt;= func(nums[right]):
-                    answer.append(func(nums[left]))
-                    left += 1
-                else:
-                    answer.append(func(nums[right]))
-                    right -= 1
-            return answer
+                    abbr[abbrS] += [dict[i]]
+            
+            for value in abbr.values():
+                if len(value) &gt; 1:
+                    keepDoing = True
+                    for i in range(0,len(value)):
+                        prefix[value[i]] += 1
+        return ans
 </code></pre>
 </div>
 
@@ -250,25 +218,6 @@
         <h4 class="page-header">Related</h4>
 
          <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/word-abbreviation/">
-    
-    Word Abbreviation</a></h4>
-
-    <h5>September 11, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Hash Table</kbd> 
-
-</div>
-  <div class="item">
 
 	
 
@@ -304,6 +253,25 @@
 
     <h5>September 11, 2017</h5>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Hash Table</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/decode-ways/">
+    
+    Decode Ways</a></h4>
+
+    <h5>September 11, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
 
 </div>
  

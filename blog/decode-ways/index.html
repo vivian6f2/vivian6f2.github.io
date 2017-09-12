@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Sort Transformed Array</title>
+        <title>Decode Ways</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Sort Transformed Array</a>
+                    <a class="navbar-brand visible-xs" href="#">Decode Ways</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,124 +121,123 @@
     
 	
 
-	<h2>Sort Transformed Array</h2>
-    <h6>August 13, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Math</kbd> 
+	<h2>Decode Ways</h2>
+    <h6>September 11, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="sort-transformed-array">Sort Transformed Array</h2>
+<h2 id="decode-ways">Decode Ways</h2>
 
-<h6 id="leetcode-360">LeetCode #360</h6>
+<h6 id="leetcode-91">LeetCode #91</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given a <strong>sorted</strong> array of integers nums and integer values a, b and c. Apply a function of the form f(x) = ax^2 + bx + c to each element x in the array.</p>
+<p>A message containing letters from A-Z is being encoded to numbers using the following mapping:</p>
 
-<p>The returned array must be in <strong>sorted order</strong>.</p>
+<pre><code>'A' -&gt; 1
+'B' -&gt; 2
+...
+'Z' -&gt; 26
+</code></pre>
 
-<p>Expected time complexity: <strong>O(n)</strong></p>
+<p>Given an encoded message containing digits, determine the total number of ways to decode it.</p>
 
-<p>Example:</p>
+<p>For example,</p>
 
-<p>nums = [-4, -2, 2, 4], a = 1, b = 3, c = 5,</p>
+<p>Given encoded message &ldquo;12&rdquo;, it could be decoded as &ldquo;AB&rdquo; (1 2) or &ldquo;L&rdquo; (12).</p>
 
-<p>Result: [3, 9, 15, 33]</p>
-
-<p>nums = [-4, -2, 2, 4], a = -1, b = 3, c = 5</p>
-
-<p>Result: [-23, -5, 1, 7]</p>
+<p>The number of ways decoding &ldquo;12&rdquo; is 2.</p>
 
 <p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>It is easy to do it brute force, compute the answer for all numbers and sort the answer array. But it takes O(n log n) time, I need to do it faster.</p>
+<p>It is a dynamic programming problem. So just build the table correctly and I can get the answer from that table.</p>
 
-<p>So then take a look at the function, it is ax^2 + bx + c. The graph of this function may look like:</p>
+<p>I will need a function isLetter(s) which will return if s is a letter or not. And there are only two conditions:</p>
+
+<ol>
+<li>If the first character in s is &lsquo;0&rsquo;, then it is not a letter.</li>
+<li>Transform s into integer, if the number is from 1~26, then it is a letter.</li>
+</ol>
+
+<p>Then I can build my table with isLetter function.</p>
+
+<ol>
+<li>My table, count[n] = how many different ways I can decode from s[0] to s[n-1].</li>
+<li>count[n] =
 
 <ul>
-<li>If a &gt; 0, a curve with minimum point at x = -b/2a.</li>
-<li>If a &lt; 0, a curve with maximum point at x = -b/2a.</li>
-<li>If a = 0, a line and I need to consider if b is larger than 0 or not.</li>
-</ul>
-
-<p>So I think I can solve this problem with two pointers.</p>
-
-<ul>
-<li>If a = 0:
-
-<ul>
-<li>If b &gt;= 0, calculate the answer and return the array directly.</li>
-<li>Else, calculate the answer, and return the reverse array.</li>
+<li>If s[n-1] is letter and s[n-2]s[n-1] is letter -&gt; count[n-1] + count[n-2]</li>
+<li>If only s[n-1] is letter -&gt; count[n-1]</li>
+<li>If only s[n-2] is letter -&gt; count[n-2]</li>
+<li>Else -&gt; 0</li>
 </ul></li>
-<li>If a &gt; 0, use two pointers, left and right:
+<li>Boundary condition:
 
-<ol>
-<li>Compare the answer at left and right, append larger one into array first and move left or right.</li>
-<li>Keep doing it until right is less than left.</li>
-<li>Return reversed array.</li>
-</ol></li>
-<li>If a &lt; 0, also use two pointers, left and right:
+<ul>
+<li>count[1] =
 
-<ol>
-<li>Compare the answer at left and right, append smaller one into array and move left or right.</li>
-<li>Keep doing it until right is less than left.</li>
-<li>Return array.</li>
-</ol></li>
-</ul>
+<ul>
+<li>If s[0] is letter -&gt; 1</li>
+<li>Else -&gt; 0</li>
+</ul></li>
+<li>count[0] = 1</li>
+</ul></li>
+<li>Return count[len(s)-1]</li>
+</ol>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
 <pre><code>class Solution(object):
-    def sortTransformedArray(self, nums, a, b, c):
+    def numDecodings(self, s):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :type a: int
-        :type b: int
-        :type c: int
-        :rtype: List[int]
+        :type s: str
+        :rtype: int
         &quot;&quot;&quot;
-        def func(x):
-            return a*x*x + b*x + c
-        answer = []
+        if len(s) == 0: return 0
         
-        if a == 0:
-            if b &gt;= 0:
-                for i in range(0, len(nums)):
-                    answer.append(func(nums[i]))
-                return answer
-            else:
-                for i in range(0, len(nums)):
-                    answer.append(func(nums[i]))
-                return answer[::-1]
-        elif a &gt; 0:
-            left = 0
-            right = len(nums)-1
-            while (left &lt;= right):
-                if func(nums[left]) &gt;= func(nums[right]):
-                    answer.append(func(nums[left]))
-                    left += 1
-                else:
-                    answer.append(func(nums[right]))
-                    right -= 1
-            return answer[::-1]
+        def isLetter(s):
+            if s[0]=='0': return False
+            return int(s) &gt; 0 and int(s) &lt;= 26
+        
+        if len(s) == 1 and isLetter(s[0]):
+            return 1
+        elif len(s) == 1:
+            return 0
+        
+        count = []
+        if isLetter(s[0]):
+            count.append(1)
         else:
-            left = 0
-            right = len(nums)-1
-            while (left &lt;= right):
-                if func(nums[left]) &lt;= func(nums[right]):
-                    answer.append(func(nums[left]))
-                    left += 1
-                else:
-                    answer.append(func(nums[right]))
-                    right -= 1
-            return answer
+            count.append(0)
+            
+        if isLetter(s[1]) and isLetter(s[0]+s[1]):
+            count.append(count[0] + 1)
+        elif isLetter(s[0]+s[1]):
+            count.append(1)
+        elif isLetter(s[1]):
+            count.append(count[0])
+        else:
+            count.append(0)
+            
+        for i in range(2, len(s)):
+            if isLetter(s[i]) and isLetter(s[i-1]+s[i]):
+                count.append(count[i-1]+count[i-2])
+            elif isLetter(s[i-1]+s[i]):
+                count.append(count[i-2])
+            elif isLetter(s[i]):
+                count.append(count[i-1])
+            else:
+                count.append(0)
+        
+        return count[len(s)-1]
 </code></pre>
 </div>
 

@@ -6,10 +6,24 @@
     <description>Recent content in Medium on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Decode Ways</title>
+      <link>https://vivian6f2.github.io/blog/decode-ways/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/decode-ways/</guid>
+      <description>Decode Ways LeetCode #91 
+Description A message containing letters from A-Z is being encoded to numbers using the following mapping:
+&#39;A&#39; -&amp;gt; 1 &#39;B&#39; -&amp;gt; 2 ... &#39;Z&#39; -&amp;gt; 26  Given an encoded message containing digits, determine the total number of ways to decode it.
+For example,
+Given encoded message &amp;ldquo;12&amp;rdquo;, it could be decoded as &amp;ldquo;AB&amp;rdquo; (1 2) or &amp;ldquo;L&amp;rdquo; (12).
+The number of ways decoding &amp;ldquo;12&amp;rdquo; is 2.</description>
+    </item>
     
     <item>
       <title>Path Sum II</title>

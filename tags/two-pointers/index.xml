@@ -6,10 +6,22 @@
     <description>Recent content in Two Pointers on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/two-pointers/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Valid Word Abbreviation</title>
+      <link>https://vivian6f2.github.io/blog/valid-word-abbreviation/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/valid-word-abbreviation/</guid>
+      <description>Valid Word Abbreviation LeetCode #408 
+Description Given a non-empty string s and an abbreviation abbr, return whether the string matches with the given abbreviation.
+A string such as &amp;ldquo;word&amp;rdquo; contains only the following valid abbreviations:
+[&amp;quot;word&amp;quot;, &amp;quot;1ord&amp;quot;, &amp;quot;w1rd&amp;quot;, &amp;quot;wo1d&amp;quot;, &amp;quot;wor1&amp;quot;, &amp;quot;2rd&amp;quot;, &amp;quot;w2d&amp;quot;, &amp;quot;wo2&amp;quot;, &amp;quot;1o1d&amp;quot;, &amp;quot;1or1&amp;quot;, &amp;quot;w1r1&amp;quot;, &amp;quot;1o2&amp;quot;, &amp;quot;2r1&amp;quot;, &amp;quot;3d&amp;quot;, &amp;quot;w3&amp;quot;, &amp;quot;4&amp;quot;]  Notice that only the above abbreviations are valid abbreviations of the string &amp;ldquo;word&amp;rdquo;. Any other string is not a valid abbreviation of &amp;ldquo;word&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>3 Sum Smaller</title>
