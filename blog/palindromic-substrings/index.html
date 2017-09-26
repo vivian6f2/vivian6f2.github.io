@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>3 Sum Smaller</title>
+        <title>Palindromic Substrings</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">3 Sum Smaller</a>
+                    <a class="navbar-brand visible-xs" href="#">Palindromic Substrings</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,77 +121,92 @@
     
 	
 
-	<h2>3 Sum Smaller</h2>
-    <h6>August 13, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
+	<h2>Palindromic Substrings</h2>
+    <h6>September 25, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="3-sum-smaller">3 Sum Smaller</h2>
+<h2 id="palindromic-substrings">Palindromic Substrings</h2>
 
-<h6 id="leetcode-259">LeetCode #259</h6>
+<h6 id="leetcode-647">LeetCode #647</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given an array of n integers nums and a target, find the number of index triplets i, j, k with 0 &lt;= i &lt; j &lt; k &lt; n that satisfy the condition nums[i] + nums[j] + nums[k] &lt; target.</p>
+<p>Given a string, your task is to count how many palindromic substrings in this string.</p>
 
-<p>For example, given nums = [-2, 0, 1, 3], and target = 2.</p>
+<p>The substrings with different start indexes or end indexes are counted as different substrings even they consist of same characters.</p>
 
-<p>Return 2. Because there are two triplets which sums are less than 2:</p>
+<p><strong>Example 1:</strong></p>
 
-<pre><code>[-2, 0, 1]
-[-2, 0, 3]
+<pre><code>Input: &quot;abc&quot;
+Output: 3
+Explanation: Three palindromic strings: &quot;a&quot;, &quot;b&quot;, &quot;c&quot;.
+</code></pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre><code>Input: &quot;aaa&quot;
+Output: 6
+Explanation: Six palindromic strings: &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;aa&quot;, &quot;aa&quot;, &quot;aaa&quot;.
 </code></pre>
 
 <p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>It is similar to <a href="/blog/3-sum/">3 Sum</a> problem, with a little change:</p>
+<p>At first, I tried to solve it through dynamic programming, with an hash table store all possible substrings and the value is if they are palindromic string or not. However, it won&rsquo;t pass space complexity.</p>
 
-<ul>
-<li>Sort array as usual.</li>
-<li>Run for loop from index = 0 to last element in array.</li>
-<li>Create a two sum function which works with two pointers, left and right:</li>
-</ul>
-
-<pre><code>if nums[index] + nums[left] + nums[right] &lt; target:
-	totalCount += right - left
-	left ++
-if nums[index] + nums[left] + nums[right] &gt;= target:
-	right --
-</code></pre>
+<p>So then, I just use a for loop with two while loops inside. The for loop means everytime I picked a center to see if it is a palindromic string. And the while loop runs through all possible substrings start from center. And if it is palindromic string, then count it.</p>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
 <pre><code>class Solution(object):
-    def threeSumSmaller(self, nums, target):
+    def countSubstrings(self, s):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :type target: int
+        :type s: str
         :rtype: int
         &quot;&quot;&quot;
-        self.count = 0
-        def twoSumSmaller(index, target):
-            left = index + 1
-            right = len(nums) - 1
-            while left &lt; right:
-                if (nums[index] + nums[left] + nums[right]) &lt; target:
-                    self.count += right - left
-                    left += 1
-                else:
-                    right -= 1
+        count = 0
+        for center in xrange(0, len(s)):
+            # odd palindrom
+            left = center
+            right = center
+            while left &gt;= 0 and right &lt; len(s) and s[left] == s[right]:
+                count += 1
+                left -= 1
+                right += 1
+            # even palindrom
+            left = center
+            right = center + 1
+            while left &gt;= 0 and right &lt; len(s) and s[left] == s[right]:
+                count += 1
+                left -= 1
+                right += 1
+        return count
         
-        nums.sort()
-        for i in range(0, len(nums)-2):
-            twoSumSmaller(i, target)
-
-        return self.count
+#         isPalindrom = {} # isPalindrom[(a,b)] means from a to b is palindrom or not (True/False)
+        
+#         for i in range(0, len(s)):
+#             isPalindrom[(i,i)] = True
+#             if i &lt; len(s)-1:
+#                 isPalindrom[(i, i+1)] = (s[i] == s[i+1])
+                
+#         for i in range(2, len(s)):
+#             for j in range(0, len(s)-i):
+#                 if (j+1, j+i-1) in isPalindrom:
+#                     isPalindrom[(j, j+i)] = isPalindrom[(j+1, j+i-1)] and s[j] == s[j+i]
+            
+#         count = 0
+#         for key in isPalindrom:
+#             if isPalindrom[key]:
+#                 count += 1
+#         return count
 </code></pre>
 </div>
 
@@ -203,25 +218,6 @@ if nums[index] + nums[left] + nums[right] &gt;= target:
         <h4 class="page-header">Related</h4>
 
          <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/palindromic-substrings/">
-    
-    Palindromic Substrings</a></h4>
-
-    <h5>September 25, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
-
-</div>
-  <div class="item">
 
 	
 
@@ -257,6 +253,25 @@ if nums[index] + nums[left] + nums[right] &gt;= target:
 
     <h5>September 11, 2017</h5>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Hash Table</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/valid-word-abbreviation/">
+    
+    Valid Word Abbreviation</a></h4>
+
+    <h5>September 11, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Easy</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
 
 </div>
  

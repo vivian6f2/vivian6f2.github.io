@@ -6,10 +6,24 @@
     <description>Recent content in Dynamic Programming on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/dynamic-programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Palindromic Substrings</title>
+      <link>https://vivian6f2.github.io/blog/palindromic-substrings/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/palindromic-substrings/</guid>
+      <description>Palindromic Substrings LeetCode #647 
+Description Given a string, your task is to count how many palindromic substrings in this string.
+The substrings with different start indexes or end indexes are counted as different substrings even they consist of same characters.
+Example 1:
+Input: &amp;quot;abc&amp;quot; Output: 3 Explanation: Three palindromic strings: &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;.  Example 2:
+Input: &amp;quot;aaa&amp;quot; Output: 6 Explanation: Six palindromic strings: &amp;quot;a&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;aa&amp;quot;, &amp;quot;aa&amp;quot;, &amp;quot;aaa&amp;quot;.</description>
+    </item>
     
     <item>
       <title>Decode Ways</title>
