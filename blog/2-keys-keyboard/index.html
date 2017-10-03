@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Reorder List</title>
+        <title>2 Keys Keyboard</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Reorder List</a>
+                    <a class="navbar-brand visible-xs" href="#">2 Keys Keyboard</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,179 +121,78 @@
     
 	
 
-	<h2>Reorder List</h2>
-    <h6>August 7, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Linked List</kbd>  <kbd class="item-tag">JavaScript</kbd>  <kbd class="item-tag">Pointer</kbd> 
+	<h2>2 Keys Keyboard</h2>
+    <h6>October 2, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="reorder-list">Reorder List</h2>
+<h2 id="2-keys-keyboard">2 Keys Keyboard</h2>
 
-<h6 id="leetcode-143">LeetCode #143</h6>
+<h6 id="leetcode-650">LeetCode #650</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given a singly linked list L: L0?L1?…?Ln-1?Ln,
-reorder it to: L0?Ln?L1?Ln-1?L2?Ln-2?…</p>
+<p>Initially on a notepad only one character &lsquo;A&rsquo; is present. You can perform two operations on this notepad for each step:</p>
 
-<p>You must do this in-place without altering the nodes&rsquo; values.</p>
+<ol>
+<li>Copy All: You can copy all the characters present on the notepad (partial copy is not allowed).
+Paste: You can paste the characters which are copied last time.</li>
+<li>Given a number n. You have to get exactly n &lsquo;A&rsquo; on the notepad by performing the minimum number of steps permitted. Output the minimum number of steps to get n &lsquo;A&rsquo;.</li>
+</ol>
 
-<p>For example,
-Given {1,2,3,4}, reorder it to {1,4,2,3}.
-<br/></p>
+<p><strong>Example 1:</strong></p>
+
+<pre><code>Input: 3
+Output: 3
+Explanation:
+Intitally, we have one character 'A'.
+In step 1, we use Copy All operation.
+In step 2, we use Paste operation to get 'AA'.
+In step 3, we use Paste operation to get 'AAA'.
+</code></pre>
+
+<p><strong>Note:</strong>
+The n will be in the range [1, 1000].</p>
+
+<p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>I will divide this question into some smaller questions:</p>
+<p>It is a dynamic programming problem, so I have to think about the table first. Let me call my table minSteps, where
+minsteps[i] means the minimum number of steps to get string with length of i.
+And minSteps[i] comes from minimum value of previous j=(0, i/2), where i mods j is 0, and add one time to copy all and multiple times to paste.</p>
 
-<ol>
-<li><p>Find the middle of the linked list.
-Just use two pointers, slow and fast. Slow pointer takes one step everytime while fast pointer takes two step. Until fast pointer reach the end of the linked list, slow pointer should be at the middle of linked list.</p>
+<pre><code>for j in range(0, i/2):
+	minStep = sys.maxint
+	if i%j == 0:
+		minSteps[i] = min(minStep, minSteps[j] + 1 + i/j - 1)
+</code></pre>
 
-<pre><code>var findMiddle = function(head){
-    var slow = head;
-    var fast = head;
-    while(fast !== null &amp;&amp; fast.next !== null){
-        slow = slow.next;
-        fast = fast.next.next;
-    }
-    return slow;
-}
-</code></pre></li>
-
-<li><p>Reverse second linked list (after middle).
-Also need two pointers, current and previous. For every node in the linked list, do the following steps:</p>
-
-<ol>
-<li>tmp = current.next, save current.next first.</li>
-<li>current.next = previous, link current node to previous node.</li>
-<li>previous = current, update previous node for next run.</li>
-<li>current = tmp, update current node for next run.</li>
-</ol>
-
-<pre><code>var reverseList = function(head){
-    var current = head;
-    var previous = null;
-    while(current){
-        var tmp = current.next;
-        current.next = previous;
-        previous = current;
-        current = tmp;
-    }
-    return previous;
-}
-</code></pre></li>
-
-<li><p>Merge two linked list.
-In this function, I would like to do following steps for every node in second linked list (take a-&gt;b, c-&gt;d as an example):</p>
-
-<ol>
-<li>tmp = secHead.next, save secHead.next first. (tmp = d)</li>
-<li>secHead.next = firstHead.next, move firstHead.next to secHead.next. (secHead = c-&gt;b)</li>
-<li>firstHead.next = secHead, move secHead back to firstHead.next. (firstHead = a-&gt;c-&gt;b)</li>
-<li>firstHead = firstHead.next.next, update firstHead for next run. (firstHead = b)</li>
-<li>secHead = tmp, update secHead for next run. (secHead = d)</li>
-</ol>
-
-<pre><code>var merge = function(head, secHead){
-    var firstHead = head;
-    while(secHead != null){
-        var tmp = secHead.next;
-        secHead.next = firstHead.next;
-        firstHead.next = secHead;
-        if(firstHead.next.next){
-            firstHead = firstHead.next.next;
-        }else{
-            firstHead = firstHead.next;
-        }
-        secHead = tmp;
-    }
-    return head;
-}
-</code></pre></li>
-</ol>
+<p>The first 1 is one time to copy all, and i/j-1 is the total times I have to paste.</p>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
-<pre><code>/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} head
- * @return {void} Do not return anything, modify head in-place instead.
- */
-var reorderList = function(head) {
-    if(head==null) return;
-    if(head.next==null) return;
-    
-    var middle = findMiddle(head);
-    var revSecHead = reverseList(middle);
-    var tmp = head;
-    var prev = null;
-
-    // Take away the last node in first linked list (unnecessary node)
-    while(tmp !== null){
-        if(tmp.next == null){
-            prev.next = null;
-            tmp = tmp.next;
-        }
-        else{
-            prev = tmp;
-            tmp = tmp.next;
-        }
-    }
-
-    head = merge(head, revSecHead);
-    return;
-    
-};
-
-var merge = function(head, secHead){
-    var cur = head;
-    while(secHead != null){
-        var tmp = secHead.next;
-        secHead.next = cur.next;
-        cur.next = secHead;
-        if(cur.next.next){
-            cur = cur.next.next;
-        }else{
-            cur = cur.next;
-        }
-        secHead = tmp;
-    }
-    return head;
-}
-
-var findMiddle = function(head){
-    var slow = head;
-    var fast = head;
-    while(fast !== null &amp;&amp; fast.next !== null){
-        slow = slow.next;
-        fast = fast.next.next;
-    }
-    return slow;
-}
-
-var reverseList = function(head){
-    var node = head;
-    var previous = null;
-    while(node){
-        var tmp = node.next;
-        node.next = previous;
-        previous = node;
-        node = tmp;
-    }
-    return previous;
-}
+<pre><code>class Solution(object):
+    def minSteps(self, n):
+        &quot;&quot;&quot;
+        :type n: int
+        :rtype: int
+        &quot;&quot;&quot;
+        minSteps = [] # minSteps[i] = minimum number of steps to get string with length of i+1
+        minSteps.append(0) #0 step to get length of 1
+        for i in range(1, n):
+            minStep = sys.maxint
+            for j in range(0, i/2+1):
+                if (i+1)%(j+1) == 0:
+                    minStep = min(minStep, minSteps[j] + 1 + (i+1)/(j+1) - 1)
+            minSteps.append(minStep)
+        return minSteps[-1]
 </code></pre>
 </div>
 
@@ -334,12 +233,12 @@ var reverseList = function(head){
     
     
 
-    <h4><a href="/blog/2-keys-keyboard/">
+    <h4><a href="/blog/palindromic-substrings/">
     
-    2 Keys Keyboard</a></h4>
+    Palindromic Substrings</a></h4>
 
-    <h5>October 2, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
+    <h5>September 25, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
 
 </div>
   <div class="item">
@@ -353,12 +252,12 @@ var reverseList = function(head){
     
     
 
-    <h4><a href="/blog/palindromic-substrings/">
+    <h4><a href="/blog/minimum-window-substring/">
     
-    Palindromic Substrings</a></h4>
+    Minimum Window Substring</a></h4>
 
     <h5>September 25, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd> 
 
 </div>
  

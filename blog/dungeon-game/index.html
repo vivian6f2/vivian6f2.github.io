@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>4 Sum</title>
+        <title>Dungeon Game</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">4 Sum</a>
+                    <a class="navbar-brand visible-xs" href="#">Dungeon Game</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -121,103 +121,87 @@
     
 	
 
-	<h2>4 Sum</h2>
-    <h6>August 12, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Recursion</kbd> 
+	<h2>Dungeon Game</h2>
+    <h6>October 2, 2017</h6>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
 
     <br><br>
     <div class="text-justify">
 
-<h2 id="4-sum">4 Sum</h2>
+<h2 id="dungeon-game">Dungeon Game</h2>
 
-<h6 id="leetcode-18">LeetCode #18</h6>
+<h6 id="leetcode-174">LeetCode #174</h6>
 
 <p><br/></p>
 
 <h4 id="description">Description</h4>
 
-<p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
+<p>The demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was initially positioned in the top-left room and must fight his way through the dungeon to rescue the princess.</p>
 
-<p><strong>Note:</strong> The solution set must not contain duplicate quadruplets.</p>
+<p>The knight has an initial health point represented by a positive integer. If at any point his health point drops to 0 or below, he dies immediately.</p>
 
-<pre><code>For example, given array S = [1, 0, -1, 0, -2, 2], and target = 0.
+<p>Some of the rooms are guarded by demons, so the knight loses health (negative integers) upon entering these rooms; other rooms are either empty (0&rsquo;s) or contain magic orbs that increase the knight&rsquo;s health (positive integers).</p>
 
-A solution set is:
-[
-  [-1,  0, 0, 1],
-  [-2, -1, 1, 2],
-  [-2,  0, 0, 2]
-]
-</code></pre>
+<p>In order to reach the princess as quickly as possible, the knight decides to move only rightward or downward in each step.</p>
+
+<p>Write a function to determine the knight&rsquo;s minimum initial health so that he is able to rescue the princess.</p>
+
+<p>For example, given the dungeon below, the initial health of the knight must be at least 7 if he follows the optimal path RIGHT-&gt; RIGHT -&gt; DOWN -&gt; DOWN.</p>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>The knight&rsquo;s health has no upper bound.</li>
+<li>Any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.</li>
+</ul>
 
 <p><br/></p>
 
 <h4 id="my-thoughts">My Thoughts</h4>
 
-<p>It is similar to <a href="/blog/3-sum/">3 Sum</a> problem. I think I will also make a helper function twoSum and use two for loops to calculate two numbers first. Then call twoSum with rest of numbers and target = target - sum of two numbers.</p>
+<p>This is a dynamic programming problem, so I have to think about the table first. MinHealth[i][j] is the minimum health of the knight should have if he wants to go from (i,j) to (n,n). But I will build the table from (n,n) to (0,0) instead of (0,0) to (n,n).</p>
 
-<p>However, it works but it runs too slow.</p>
-
-<p>So, I think I have to take advantage on sorted array. And also change my solution into a recursive function which can handle N Sum problem, and it considers about following condition:</p>
-
-<ul>
-<li>If number of nums is less than N or N &lt; 2, it means that the remaining nums cannot come up with a result, so just return.</li>
-<li>If N == 2, then do two sum as usual with two pointers.</li>
-<li>Else, run for loop for all remaining nums:
+<p>And for minHealth[i][j], the value of it may be minimum of minHealth[i][j+1] (from down) or minHealth[i+1][j] (from right) - dungeon[i][j]. If the value is smaller than 0, then it should be 1. Let me explain how does this solution come from:</p>
 
 <ol>
-<li>To speed up, I have to take advantage of sorted array. If target &lt; nums[i] * N or target &gt; nums[-1] * N, it is impossible to get N numbers which sum equals to target, so I can break the loop.</li>
-<li>Take advantage of sorted array again, I can just process index where nums[index-1] != nums[index], cause I don&rsquo;t have to compute the same answer. And in this condition, I can call recursive function with nums = nums[i+1:], target = target - nums[i], and N = N-1</li>
-</ol></li>
-</ul>
+<li>If at (i,j), knight will lose hp, it means that after the knight&rsquo;s hp - dungeon[i][j], his hp should still larger than or equal to minHealth at either (i+1,j) or (i,j+1). Otherwise, he cannot go to (n,n). Therefore, I choose the miniimum value of minHealth[i+1][j] or minHealth[i][j+1].</li>
+<li>If at (i,j), knight will get some buff to increase his hp, it means that after the knight&rsquo;s hp + dungeon[i][j], his hp should still larger than or equal to minHealth at either (i+1,j) or (i,j+1). However, in some cases, dungeon[i][j] may much larger than minHealth he needs, then he just needs 1 hp when he enters this room. (His hp cannot be less than 1!)</li>
+<li>After handling normal cases, there are some corner cases at right most rooms and down most rooms. I can skip some overflow rooms.</li>
+</ol>
+
+<p>After finishing the table, just return minHealth at (0,0).</p>
 
 <p><br/></p>
 
 <h4 id="solution">Solution</h4>
 
 <pre><code>class Solution(object):
-    def fourSum(self, nums, target):
+    def calculateMinimumHP(self, dungeon):
         &quot;&quot;&quot;
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[List[int]]
+        :type dungeon: List[List[int]]
+        :rtype: int
         &quot;&quot;&quot;
-        results = []
+        if len(dungeon) == 0:
+            return 1
         
-        def findNSum(nums, target, N, result):
-            if len(nums) &lt; N or N &lt; 2:
-                return
-            
-            # two Sum
-            if N == 2:
-                left = 0
-                right = len(nums)-1
-                while left &lt; right:
-                    if nums[left] + nums[right] == target:
-                        results.append(result + [nums[left], nums[right]])
-                        left += 1
-                        right -= 1
-                        while left &lt; right and nums[left] == nums[left-1]:
-                            left += 1
-                        while left &lt; right and nums[right] == nums[right+1]:
-                            right -= 1
-                    elif nums[left] + nums[right] &lt; target:
-                        left += 1
-                    else:
-                        right -= 1
-            else:
-                for i in range(0, len(nums)-N+1):
-                    if target &lt; nums[i]*N or target &gt; nums[-1]*N:
-                        break
-                    if i == 0 or i &gt; 0 and nums[i-1] != nums[i]:
-                        findNSum(nums[i+1:], target-nums[i], N-1, result+[nums[i]])
-            return
+        minHealth = []
+        for i in range(0, len(dungeon)):
+            l = []
+            for j in range(0, len(dungeon[i])):
+                l.append(None)
+            minHealth.append(l)
         
-        nums.sort()
-        findNSum(nums, target, 4, [])
-                    
-        
-        return results
+        for i in range(len(dungeon)-1, -1, -1):
+            for j in range(len(dungeon[i])-1, -1, -1):
+                if i == len(dungeon)-1 and j == len(dungeon[i])-1:
+                    minHealth[i][j] = max(1, 1 - dungeon[i][j])
+                elif i == len(dungeon)-1:
+                    minHealth[i][j] = max(1, minHealth[i][j+1] - dungeon[i][j])
+                elif j == len(dungeon[i])-1:
+                    minHealth[i][j] = max(1, minHealth[i+1][j] - dungeon[i][j])
+                else:
+                    minHealth[i][j] = max(1, min(minHealth[i][j+1], minHealth[i+1][j]) - dungeon[i][j])
+        return minHealth[0][0]
 </code></pre>
 </div>
 
@@ -229,25 +213,6 @@ A solution set is:
         <h4 class="page-header">Related</h4>
 
          <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/dungeon-game/">
-    
-    Dungeon Game</a></h4>
-
-    <h5>October 2, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
-
-</div>
-  <div class="item">
 
 	
 
@@ -283,6 +248,25 @@ A solution set is:
 
     <h5>September 25, 2017</h5>
      <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
+
+</div>
+  <div class="item">
+
+	
+
+	
+
+    
+
+    
+    
+
+    <h4><a href="/blog/minimum-window-substring/">
+    
+    Minimum Window Substring</a></h4>
+
+    <h5>September 25, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Hash Table</kbd>  <kbd class="item-tag">Two Pointers</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd> 
 
 </div>
  

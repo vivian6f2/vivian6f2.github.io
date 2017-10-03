@@ -6,7 +6,7 @@
     <description>Recent content in Python on Ting-Hsuan Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vivian6f2.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,28 @@
       
       <guid>https://vivian6f2.github.io/ec2-34-223-214-115.us-west-2.compute.amazonaws.com3000</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>2 Keys Keyboard</title>
+      <link>https://vivian6f2.github.io/blog/2-keys-keyboard/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/2-keys-keyboard/</guid>
+      <description>2 Keys Keyboard LeetCode #650 
+Description Initially on a notepad only one character &amp;lsquo;A&amp;rsquo; is present. You can perform two operations on this notepad for each step:
+ Copy All: You can copy all the characters present on the notepad (partial copy is not allowed). Paste: You can paste the characters which are copied last time. Given a number n. You have to get exactly n &amp;lsquo;A&amp;rsquo; on the notepad by performing the minimum number of steps permitted.</description>
+    </item>
+    
+    <item>
+      <title>Dungeon Game</title>
+      <link>https://vivian6f2.github.io/blog/dungeon-game/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vivian6f2.github.io/blog/dungeon-game/</guid>
+      <description>Dungeon Game LeetCode #174 
+Description The demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was initially positioned in the top-left room and must fight his way through the dungeon to rescue the princess.
+The knight has an initial health point represented by a positive integer.</description>
     </item>
     
     <item>

@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>Container With Most Water</title>
+        <title>Leetcode</title>
 
         <style>
 
@@ -71,7 +71,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Container With Most Water</a>
+                    <a class="navbar-brand visible-xs" href="#">Leetcode</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -118,81 +118,9 @@
 
 <main>
 
-    
-	
+    <h2>Leetcode</h2>
 
-	<h2>Container With Most Water</h2>
-    <h6>August 12, 2017</h6>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Array</kbd>  <kbd class="item-tag">Two Pointers</kbd> 
-
-    <br><br>
-    <div class="text-justify">
-
-<h2 id="container-with-most-water">Container With Most Water</h2>
-
-<h6 id="leetcode-11">LeetCode #11</h6>
-
-<p><br/></p>
-
-<h4 id="description">Description</h4>
-
-<p>Given n non-negative integers a1, a2, &hellip;, an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p>
-
-<p>Note: You may not slant the container and n is at least 2.</p>
-
-<p><br/></p>
-
-<h4 id="my-thoughts">My Thoughts</h4>
-
-<p>It is easy to do with two pointers, left and right. Calculate the rectangle between left and right first and update max area, and then try to move left or right pointer:</p>
-
-<pre><code>* If left height is less than right height, move left pointer until left height &gt;= right height.
-* Vice versa
-</code></pre>
-
-<p><br/></p>
-
-<h4 id="solution">Solution</h4>
-
-<pre><code>class Solution(object):
-    def maxArea(self, height):
-        &quot;&quot;&quot;
-        :type height: List[int]
-        :rtype: int
-        &quot;&quot;&quot;
-        max_area = 0
-        lh = height[0]
-        rh = height[len(height)-1]
-        i=0
-        j=len(height)-1
-
-        while i&lt;j:
-            tmp = min(lh,rh)*(j-i)
-            max_area = max(tmp,max_area)
-            if lh&lt;rh:
-                while i&lt;j and height[i]&lt;=lh:
-                    i=i+1
-                if i&lt;j:
-                    lh=height[i]
-            else:
-                while i&lt;j and height[j]&lt;=rh:
-                    #print(&quot;in&quot;)
-                    j=j-1
-                if i&lt;j:
-                    rh=height[j]
-
-        return max_area
-</code></pre>
-</div>
-
-    
-    
-
-    
-
-        <h4 class="page-header">Related</h4>
-
-         <div class="item">
+     <div class="item">
 
 	
 
@@ -203,57 +131,31 @@
     
     
 
-    <h4><a href="/blog/dungeon-game/">
+    <h4><a href="/blog/trapping-rain-water/">
     
-    Dungeon Game</a></h4>
+    Trapping Rain Water</a></h4>
 
-    <h5>October 2, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/2-keys-keyboard/">
-    
-    2 Keys Keyboard</a></h4>
-
-    <h5>October 2, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
-
-</div>
-  <div class="item">
-
-	
-
-	
-
-    
-
-    
-    
-
-    <h4><a href="/blog/palindromic-substrings/">
-    
-    Palindromic Substrings</a></h4>
-
-    <h5>September 25, 2017</h5>
-     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Medium</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">String</kbd>  <kbd class="item-tag">Dynamic Programming</kbd> 
+    <h5>August 7, 2017</h5>
+     <kbd class="item-tag">LeetCode</kbd>  <kbd class="item-tag">Hard</kbd>  <kbd class="item-tag">Python</kbd>  <kbd class="item-tag">Pointer</kbd> 
 
 </div>
  
 
-    
-
 </main>
+
+
+
+    <div class="pages">
+
+        
+            <a class="icon pages-icon" href="/tags/leetcode/page/4/" rel="prev">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        
+
+        
+
+    </div>
 
 
 
